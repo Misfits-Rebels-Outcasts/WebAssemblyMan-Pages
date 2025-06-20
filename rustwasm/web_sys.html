@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <!-- Site Title-->
+    <title>web_sys</title>
+    <meta content="web_sys - Raw API bindings for Web APIs"
+			name="description">
+    <meta content="web_sys, web apis"
+			name="keywords">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Libre+Franklin:200,300,500,600,300italic">
+    <!--
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    -->
+    <link rel=“preload” href=“../fonts//fontawesome-webfont.woff2?v=4.7.0” as=“font”>
+    <link rel="preload" href="../css/bootstrap.min.css" as="style">
+    <link rel="preload" href="../css/style.css" as="style">
+    <link rel="preload" href="../js/core.min.js" as="script">
+    <link rel="preload" href="../js/script.js" as="script">
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css">
+		<!--[if lt IE 10]>
+    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="../images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <script src="../js/html5shiv.min.js"></script>
+		<![endif]-->
+  </head>
+  <body>
+    <!-- Page -->
+    <div class="page">
+      <div id="page-loader">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+      </div>
+      <!-- Page header-->
+            <header class="page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-device-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-stick-up-clone="false" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true" data-lg-stick-up-offset="69px" data-xl-stick-up-offset="1px" data-xxl-stick-up-offset="1px">
+            <div class="rd-navbar-inner">
+              <!-- RD Navbar Panel -->
+              <div class="rd-navbar-panel">
+                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                <!-- RD Navbar Brand-->
+                <div><a href="../index.html" style="color:black;margin-top:2.5px;font-size:22px;">WEBASSEMBLYMAN</a></div>
+              </div>
+              <!-- RD Navbar Nav-->
+              <div class="rd-navbar-nav-wrap">
+
+<ul class="rd-navbar-nav">
+  <li><a href="../index.html">Home</a>
+    <li class="active"><a href="#">WebAssembly</a>
+      <ul class="rd-navbar-dropdown">
+            <li><a href="../wat_webassembly_text_format.html">WebAssembly Text Format</a></li>
+            <li><a href="../webassembly_wat_hello_world.html">WebAssembly WAT Hello World</a></li>
+            <li><a href="../webassembly_data_types.html">WebAssembly Data Types</a></li>
+            <li><a href="../webassembly_control_flow.html">WebAssembly Control Flow</a></li>
+            <li><a href="../webassembly_front_end_web_development.html">WebAssembly Front-End Development</a></li>
+          </ul>
+    </li>
+
+    <li class="active"><a href="#">Blazor</a>
+      <ul class="rd-navbar-dropdown">
+            <li><a href="../blazor/blazorcomponents.html">Blazor Components</a></li>
+            <li><a href="../blazor/blazordatabinding.html">Blazor Data Binding</a></li>
+            <li><a href="../blazor/blazorevents.html">Blazor Events</a></li>
+            <li><a href="../blazor/blazorcascadingvaluesparameters.html">Blazor Cascading Values & Parameters</a></li>
+            <li><a href="../blazor/blazorbuildrendertree.html">Blazor BuildRenderTree</a></li>
+            <li><a href="../blazor/blazorforloop.html">for loop</a></li>
+            <li><a href="../blazor/blazorforeachloop.html">foreach loop</a></li>
+            <li><a href="../blazor/blazorwhiledowhileloop.html">while loop</a></li>
+            <li><a href="../blazor/blazorswitch.html">switch statement</a></li>
+            <li><a href="../blazor/blazorifelseif.html">if, else and else if statement</a></li>    
+              </ul>
+    </li>
+    
+  <li class="active"><a href="#">rustwasm</a>
+  <ul class="rd-navbar-dropdown">
+    <li><a href="../rust_webassembly_hello_world.html">Rust WebAssembly Hello World</a></li>
+    <li><a href="../rustwasm/wasm-bindgen.html">wasm-bindgen</a></li>
+    <li><a href="../rustwasm/web_sys.html">web_sys</a></li>
+    <li><a href="../rustwasm/web_sys_console.html">web_sys console</a></li>
+  </ul>
+</li>
+
+</ul>
+
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+
+            <section class="breadcrumbs-custom">
+        <div class="container">
+          <div class="breadcrumbs-custom__inner">
+            <p class="breadcrumbs-custom__title">Man(ual) page for WebAssembly</p>
+            <ul class="breadcrumbs-custom__path">
+              <li><a href="../index.html">Home</a></li>
+              <li class="active">rustwasm</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="bg-default section-lg">
+        <div class="container">
+          <div class="row row-60 justify-content-sm-center">
+            <div class="col-lg-8 section-divided__main">
+
+
+	                     <h4>web_sys</h4>
+                <p>web_sys is a crate, a library in Rust, that contains Raw API bindings for Web APIs. 
+                For example, if you need to use the "Window.console.log" function (browser's debugging console) in rustwasm, one way to do this is, you can define
+                define the bindings for this WEB API using "wasm-bindgen". Alternatively, you can save some work on the definition by simply making use of web_sys.
+                To use an API in web_sys, you will just need to enable the features for the types used in the API.        
+                </p>
+                <p>The Cargo.toml below enables the use of the "Window" object and also other useful Web APIs objects (or Structs in Rust) such as "Document" or "HtmlElement".</p>
+                <p>Cargo.toml</p>
+
+                <div class="quote-bordered" style="text-align:left;background:black"> 
+                    <pre><code style="color:white;">[package]
+name = "dom"
+version = "0.1.0"
+authors = ["www.webassemblyman.com"]
+edition = "2019"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "0.2.50"
+
+[dependencies.web-sys]
+version = "0.3.4"
+features = [
+  'Document',
+  'Element',
+  'HtmlElement',
+  'Node',
+  'Window',
+]       
+        </code></pre>                  
+        </div>
+        <p>After enabling the features of the Web APIs in web_sys, you can easily use them in your rustwasm programs as shown below. The exanple below illustrates how to add a &lt;p&gt; element to the Document Object Model (DOM).</p>
+<p>src/lib.rs</p>
+        <div class="quote-bordered" style="text-align:left;background:black"> 
+            <pre><code style="color:white;">
+                use wasm_bindgen::prelude::*;
+
+                #[wasm_bindgen(start)]
+                pub fn run() -> Result<(), JsValue> {
+
+                    let window = web_sys::window().expect("no window exists");
+                    let document = window.document().expect("window should have a document");
+                    let body = document.body().expect("document should have a body");                
+                    let val = document.create_element("p")?;
+                    val.set_inner_html("Hello World from webassemblyMan!");                
+                    body.append_child(&val)?;                
+                    Ok(())
+                }       
+</code></pre>                  
+</div>
+<p> </p>
+                <h4>Modules</h4>
+                <ul class="list-marked">
+                <li><a href=web_sys_console.html>console</a></li>
+                <li>css</li>
+                </ul>
+                <p></p>
+                <h5>Functions</h5>
+                <ul class="list-marked">
+                <li>window - Getter for the Window object</li>
+                </ul>
+                <p></p>
+                <h5>Structs</h5>
+                <ul class="list-marked">
+                        <li>Attr - The Attr object</li>
+                        <li>AttributeNameValue - The AttributeNameValue dictionary</li>
+                        <li>SvgElement - The SVGElement object</li>
+                                    </ul>
+                                    <p></p>
+
+                <h4>Enums</h4>
+                <ul class="list-marked">
+                <li>AlignSetting</li>
+                        <li>ConsoleLevel</li>
+                        <li>ConsoleLogLevel</li>
+                    </ul>
+
+
+             </div>
+      
+
+
+	    
+            <div class="col-lg-4 section-divided__aside section-divided__aside-left">
+
+              <section class="section-md">
+                <h5>rustwasm</h5>
+                <ul class="list-linked">
+                  <li><a href="../rust_webassembly_hello_world.html">Rust WebAssembly Hello World</a></li>
+                  <li><a href="../rustwasm/wasm-bindgen.html">wasm-bindgen</a></li>
+                  <li><a href="../rustwasm/web_sys.html">web_sys</a></li>
+                  <li><a href="../rustwasm/web_sys_console.html">web_sys console</a></li>
+                </ul>
+              </section>
+  
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider-->
+      <div class="container">
+        <div class="divider"></div>
+      </div>
+
+      <section class="pre-footer-corporate" style="display:none">
+        <div class="container">
+          <div class="row justify-content-sm-center justify-content-lg-start row-30 row-md-60">
+
+            <ul class="list-inline-xxs">
+              <li><a class="icon icon-xxs icon-primary fa fa-twitter" href="https://connectcode.twitter.com"></a></li>
+            </ul>
+
+            <div class="col-sm-10 col-md-6 col-lg-3 col-xl-3">
+            </div>
+            <div class="col-sm-10 col-md-6 col-lg-5 col-xl-3">
+            </div>
+            <div class="col-sm-10 col-md-6 col-lg-4 col-xl-3">
+              <ul class="list-xs">
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <footer class="footer-corporate">
+        <div class="container">
+          <div class="footer-corporate__inner">
+            <p class="rights">Copyright <span>https://www.webassemblyMan.com</span><span>&nbsp;</span>2018 - <span id="copyright-year"></span>.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="../js/core.min.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>

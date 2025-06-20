@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151192680-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+    
+          gtag('config', 'UA-151192680-1');
+        </script>
+    
+    <!-- Site Title-->
+    <title>WebAssembly Web Components and Custom Elements</title>
+    <meta content="Develop Web Components with rustwasm WebAssembly."
+			name="description">
+    <meta content="webassembly web component, wasm custom element, wasm web components"
+			name="keywords">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Libre+Franklin:200,300,500,600,300italic">
+    <!--
+    <link rel="stylesheet" href="css/bootstrap.css">
+    -->
+
+    <link rel=“preload” href=“fonts//fontawesome-webfont.woff2?v=4.7.0” as=“font”>
+    <link rel=“preload” href=“fonts//fontawesome-webfont.woff?v=4.7.0” as=“font”>
+    <link rel=“preload” href=“fonts//fontawesome-webfont.eot?v=4.7.0” as=“font”>
+    <link rel="preload" href="css/bootstrap.min.css" as="style">
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/core.min.js" as="script">
+    <link rel="preload" href="js/script.js" as="script">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css">
+		<!--[if lt IE 10]>
+    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <script src="js/html5shiv.min.js"></script>
+		<![endif]-->
+  </head>
+  <body>
+    <!-- Page -->
+    <div class="page">
+      <div id="page-loader">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+      </div>
+      <!-- Page header-->
+            <header class="page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-device-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-stick-up-clone="false" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true" data-lg-stick-up-offset="69px" data-xl-stick-up-offset="1px" data-xxl-stick-up-offset="1px">
+            <div class="rd-navbar-inner">
+              <!-- RD Navbar Panel -->
+              <div class="rd-navbar-panel">
+                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                <!-- RD Navbar Brand-->
+                <div><a href="index.html" style="color:black;margin-top:2.5px;font-size:22px;">WEBASSEMBLYMAN</a></div>
+              </div>
+              <!-- RD Navbar Nav-->
+              <div class="rd-navbar-nav-wrap">
+
+<ul class="rd-navbar-nav">
+  <li><a href="index.html">Home</a></li>
+
+    <li class="active"><a href="#">WebAssembly</a>
+      <ul class="rd-navbar-dropdown">
+          <li><a href="webcomponents.html">WebAssembly Web Components</a></li>
+            <li><a href="wat_webassembly_text_format.html">WebAssembly Text Format</a></li>
+            <li><a href="webassembly_wat_hello_world.html">WebAssembly WAT Hello World</a></li>
+            <li><a href="webassembly_data_types.html">WebAssembly Data Types</a></li>
+            <li><a href="webassembly_control_flow.html">WebAssembly Control Flow</a></li>
+            <li><a href="webassembly_front_end_web_development.html">WebAssembly Front-End Development</a></li>
+          </ul>
+    </li>
+
+    <li class="active"><a href="#">Blazor</a>
+      <ul class="rd-navbar-dropdown">
+        <li><a href="blazorhelloworld.html">Blazor Hello World</a></li>
+            <li><a href="blazor/blazorcomponents.html">Blazor Components</a></li>
+            <li><a href="blazor/blazoradmindashboard.html">Blazor Dashboard</a></li>
+            <li><a href="blazor/blazorcharts.html">Blazor Charts</a></li>
+            <li><a href="blazor/blazordonutchart.html">Blazor Donut Chart</a></li>
+            <li><a href="blazor/blazorpiechart.html">Blazor Pie Chart</a></li>
+            <li><a href="blazor/blazorbarchart.html">Blazor Bar Chart</a></li>
+            <li><a href="blazor/blazorlinechart.html">Blazor Line Chart</a></li>
+            <li><a href="blazor/blazordatabinding.html">Blazor Data Binding</a></li>
+            <li><a href="blazor/blazorevents.html">Blazor Events</a></li>
+            <li><a href="blazor/blazorcascadingvaluesparameters.html">Blazor Cascading Values & Parameters</a></li>
+            <li><a href="blazor/blazorbuildrendertree.html">Blazor BuildRenderTree</a></li>
+            <li><a href="blazor/blazorforloop.html">for loop</a></li>
+            <li><a href="blazor/blazorforeachloop.html">foreach loop</a></li>
+            <li><a href="blazor/blazorwhiledowhileloop.html">while loop</a></li>
+            <li><a href="blazor/blazorswitch.html">switch statement</a></li>
+            <li><a href="blazor/blazorifelseif.html">if, else and else if statement</a></li>    
+              </ul>
+    </li>
+    
+  <li class="active"><a href="#">Rust WebAssembly</a>
+  <ul class="rd-navbar-dropdown">
+    <li><a href="rust_webassembly_hello_world.html">Rust WebAssembly Hello World</a></li>
+    <li><a href="rustwasm/frontendframeworksrustwebassembly.html">Rust WebAssembly Front End Frameworks</a></li>
+    <li><a href="rustwasm/how_to_manipulate_the_dom_in_rust_webassembly.html">DOM manipulation</a></li>
+    <li><a href="rustwasm/how_to_create_and_access_html_objects_in_rust_webassembly.html">HTML Objects</a></li>  
+    <li><a href="rustwasm/how_to_add_an_onclick_event_to_a_button_in_rust_webassembly.html">Button onclick</a></li> 
+    <li><a href="rustwasm/how_to_add_mouse_events_in_rust_webassembly.html">Mouse events</a></li> 
+    <li><a href="rustwasm/how_to_add_keyboard_events_in_rust_webassembly.html">Keyboard events</a></li>   
+    <li><a href="rustwasm/how_to_log_to_the_console_in_rust_webassembly.html">Console log</a></li> 
+    <li><a href="rustwasm/how_to_add_svg_in_rust_webassembly.html">SVG in Rust WebAssembly</a></li> 
+    <li><a href="rustwasm/rustwasm_svg_donut_chart_webcomponent.html">SVG Donut Chart in Rust WebAssembly</a></li> 
+
+  </ul>
+</li>
+
+<li class="active"><a href="#">rustwasm API</a>
+  <ul class="rd-navbar-dropdown">
+    <li><a href="rustwasm/wasm-bindgen.html">wasm-bindgen</a></li>
+    <li><a href="rustwasm/wasm_bindgen_jsvalue.html">wasm_bindgen::JsValue</a></li>    
+    <li><a href="rustwasm/web-sys.html">web-sys</a></li>
+    <li><a href="rustwasm/web_sys_console.html">web_sys::console</a></li>
+    <li><a href="rustwasm/web_sys_document.html">web_sys::Document</a></li>
+    <li><a href="rustwasm/web_sys_htmlcanvaselement.html">web_sys::HtmlCanvasElement</a></li>
+    <li><a href="rustwasm/web_sys_canvasrenderingcontext2d.html">web_sys::CanvasRenderingContext2d</a></li>
+    <li><a href="rustwasm/web_sys_fontface.html">web_sys::FontFace</a></li>      
+    <li><a href="rustwasm/web_sys_svgelement.html">web_sys::SvgElement</a></li>
+    <li><a href="rustwasm/js-sys.html">js-sys</a></li>
+    <li><a href="rustwasm/js_sys_array.html">js_sys::Array</a></li>
+    <li><a href="rustwasm/gloo_events_eventlistener.html">gloo_events::EventListener</a></li>
+    <li><a href="rustwasm/wasm-bindgen-futures.html">wasm-bindgen-futures</a></li>
+    <li><a href="rustwasm/wasm_bindgen_futures_jsfuture.html">wasm-bindgen-futures::JsFuture</a></li>
+
+  </ul>
+</li>
+
+</ul>
+
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+
+            <section class="breadcrumbs-custom">
+        <div class="container">
+          <div class="breadcrumbs-custom__inner">
+            <p class="breadcrumbs-custom__title">Man(ual) page for WebAssembly</p>
+            <ul class="breadcrumbs-custom__path">
+              <li><a href="index.html">Home</a></li>
+              <li>WebAssembly</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="bg-default section-lg">
+        <div class="container">
+          <div class="row row-60 justify-content-sm-center">
+            <div class="col-lg-8 section-divided__main">
+<!--
+
+              <section class="section-md post-single-body">
+                <div class="quote-default"> 
+                  <svg class="quote-default__mark" version="1.1" baseprofile="tiny" x="0px" y="0px" width="30.234px" height="23.484px" viewbox="0 0 30.234 23.484">
+                    <g>
+                      <path d="M12.129,0v1.723c-2.438,0.891-4.348,2.291-5.73,4.201c-1.383,1.911-2.074,3.897-2.074,5.959 c0,0.445,0.07,0.773,0.211,0.984c0.093,0.141,0.199,0.211,0.316,0.211c0.117,0,0.293-0.082,0.527-0.246 c0.75-0.539,1.699-0.809,2.848-0.809c1.336,0,2.519,0.545,3.551,1.635c1.031,1.09,1.547,2.385,1.547,3.885 c0,1.57-0.592,2.953-1.775,4.148c-1.184,1.195-2.619,1.793-4.307,1.793c-1.969,0-3.668-0.809-5.098-2.426 C0.715,19.441,0,17.274,0,14.555c0-3.164,0.972-6,2.918-8.508C4.863,3.539,7.933,1.524,12.129,0z M29.039,0v1.723 c-2.438,0.891-4.348,2.291-5.73,4.201c-1.383,1.911-2.074,3.897-2.074,5.959c0,0.445,0.07,0.773,0.211,0.984 c0.094,0.141,0.199,0.211,0.316,0.211s0.293-0.082,0.527-0.246c0.75-0.539,1.699-0.809,2.848-0.809c1.336,0,2.52,0.545,3.551,1.635 s1.547,2.385,1.547,3.885c0,1.57-0.592,2.953-1.775,4.148s-2.619,1.793-4.307,1.793c-1.969,0-3.668-0.809-5.098-2.426 s-2.145-3.785-2.145-6.504c0-3.164,0.973-6,2.918-8.508C21.773,3.539,24.844,1.524,29.039,0z"></path>
+                    </g>
+                  </svg>
+                  <div class="quote-default__text">
+                    <p class="q heading-4">Samples, references, tutorials and how-to on Blazor and WebAssembly.</p>
+                  </div>
+                  <p class="quote-default__cite">Man page for Blazor & WebAssembly</p>
+                </div>
+              </section>
+-->
+	      <h4>Develop Web Components with rustwasm WebAssembly</h4>
+<p>      
+I have previously written about using <a href=https://www.barcoderesource.com/pwa_webcomponents_webassembly.shtml>Emscripten to develop W3C Web Components with WebAssembly</a>. The process involves the use of JavaScript to define a Web Component, which in turn loads a WebAssembly module to perform the necessary tasks.  
+</p><p>In this article we are going to illustrate how to create a W3C Web Component with rustwasm WebAssembly "natively". In case you have not used the Rust programming language before, the overview below should get you up to speed quickly.
+</p> 
+<h5>Overview</h5>
+<p>
+Rust is a programming language that empowers everyone to build reliable and efficient software. An important characteristic is its rich type system and ownership memory-safety, enabling it to not require a garbage collector. This results in Rust applications to be blazingly fast, memory-efficient and have no unpredictable garbage collection pauses. 
+</p>
+<p>
+rustwasm is an open source project by Mozilla that enables you to write Rust programs and compile it to WebAssembly (wasm). Without requiring a runtime or garbage collector, WebAssembly (wasm) modules written in rustwasm is small and contains no extra bloat.
+</p>
+<p>
+wasm-bindgen is part of rustwasm that is used for facilitating high-level interactions between wasm modules and JavaScript. You can use it to import JavaScript functions/Web APIs for use in Rust or export WASM functions defined in Rust for use in JavaScript. This interoperability is useful in ensuring that a rustwasm program have access to all the available APIs of the browser and existing JavaScript applications can flexibly plug in a wasm module and interact with it.    
+</p>
+
+<h5>How to develop a Web Component with rustwasm?</h5>
+<p></p>
+<h6>Prerequisites</h6>
+
+<ul class="list-marked">
+<li>Rust is installed - See https://www.rust-lang.org/tools/install</li>
+<li>Python3 is installed - For use as a development HTTP server. This is not required if you are using other development web server.</li>
+</ul>
+<p>
+</p>
+
+<p>
+1. In our Linux, Windows or Mac Terminal, enter the following command to install wasm-bindgen. 
+</p>
+<p>
+<kbd>cargo install wasm-bindgen-cli</kbd>
+</p>
+<p>
+</p><p>  
+2. Next, create a new rustwasm (Rust WebAssembly) project with the following command.
+</p>
+<p>
+<kbd>cargo new webassembly_webcomponent --lib</kbd>
+</p>
+<p>
+
+You should see the following message. 
+</p>
+<div class="" style="text-align:left;background:whitesmoke"><pre><code style="color:#000;background:whitesmoke">
+        Created library `webassembly_webcomponent` package
+        A new "webassembly_webcomponent" rustwasm package has been created. 
+    </code></pre></div>                        
+<p>
+3. Using a text editor, open "Cargo.toml", and see that it contains the following.
+</p>
+
+    <div class="quote-bordered" style="text-align:left;background:black"> 
+      <pre><code style="color:white;">
+[package]
+name = "webassembly_webcomponent"
+version = "0.1.0"
+authors = ["djembe-waka <support@webassemblyman.com>"]
+edition = "2018"
+
+[dependencies]
+            </code></pre>                  
+        </div>
+<p>
+Change the contents to the following.
+</p>
+    <div class="quote-bordered" style="text-align:left;background:black"> 
+      <pre><code style="color:white;">
+[package]
+name = "webassembly_webcomponent"
+version = "0.1.0"
+authors = ["djembe-waka <support@webassemblyman.com>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+js-sys = "0.3.4"
+wasm-bindgen = "0.2.54"
+console_error_panic_hook = "0.1.6"
+
+[dependencies.web-sys]
+version = "0.3.4"
+
+features = [
+    'console',
+    'Window',
+    'Document',
+    'DocumentFragment',
+    'Node',
+    'Element',
+    'HtmlElement',
+    'HtmlSlotElement',
+    'HtmlTemplateElement',
+    'CustomElementRegistry',
+    'ShadowRoot',
+    'ShadowRootInit',
+    'ShadowRootMode',
+]            </code></pre>                  
+        </div>
+<p>
+<p>
+In the above, we specify the use of <a href=https://www.webassemblyman.com/rustwasm/wasm-bindgen.html>wasm-bindgen</a> (0.2.52 or above is required), <a href=https://www.webassemblyman.com/rustwasm/web-sys.html>web-sys</a> and <a href=https://www.webassemblyman.com/rustwasm/js-sys.html>js-sys</a>.  
+As described earlier, wasm-bindgen is used for 
+facilitating high-level interactions between wasm modules and JavaScript. 
+For example, if we need to use the browsers "Window" or "Document" objects or other functions in our rustwasm application, we can use wasm-bindgen to import and use them.  
+It is a low-level library to ensure that everything we require from the browser (all Web APIs and JavaScript objects) can be imported to our rustwasm application.
+</p>
+<p>
+In our Web Component, we also web-sys and js-sys, which are built on top of wasm-bindgen, to further ease our development process. 
+In the above, we have specified the use the "console", "Window", "Document", "Node" and "Element" and other features from web-sys.
+When our application is compiled, all the wasm-bindgen bindings and imports will be automatically generated for us, saving us a lot of work. 
+</p>
+<p>With the features specified above, we can write a rustwasm application
+that uses the different browser objects to add a "Hello World" paragraph element as shown below.
+</p>
+
+<div class="quote-bordered" style="text-align:left;background:black"> 
+        <pre><code style="color:white;">
+use wasm_bindgen::prelude::*;
+
+#[wasm_bindgen(start)]
+pub fn run() -> Result&lt;(), JsValue> {
+
+    let window = web_sys::window().expect("no window exists");
+    let document = window.document().expect("window should have a document");
+    let body = document.body().expect("document should have a body");                
+    let val = document.create_element("p")?;
+    val.set_inner_html("Hello World from webassemblyMan!");                
+    body.append_child(&val)?;                
+    Ok(())
+}       
+</code></pre>                  
+</div>
+<p>
+<!--
+    To summarize, web_sys is a crate, a library in Rust, that contains Raw API bindings for Web APIs using wasm-bindgen. We use it to enable features in "Cargo.toml" so that we have access to the browser objects, modules and functions.
+-->
+The addition thing to note in "Cargo.toml" is that we have also enabled "HtmlElement" and "ShadowRoot" etc. which are objects we require for defining a Web Component.
+</p>
+
+<p>
+4. Next, use a text editor and create a "index.html" file. Change the content of the file to the following:
+</p>
+<div class="quote-bordered" style="text-align:left;background:black"> 
+<pre><code style="color:white;">
+&lt;html>
+
+&lt;head>
+&lt;meta charset="utf-8">
+&lt;title>WebAssembly WebComponent&lt;/title>  
+&lt;script src="main.js" defer>&lt;/script>  
+&lt;/head>
+&lt;body>
+
+&lt;h1>WebComponent Template&lt;/h1>
+&lt;template id="webassembly-webcomponent">
+    &lt;style>
+    p {
+    color: white;
+    background-color: #666;
+    padding: 5px;
+
+    }
+    &lt;/style>
+    &lt;p>&lt;slot name="webcomponent-text">Default Text&lt;/slot>&lt;/p>
+&lt;/template>
+
+&lt;webassembly-webcomponent>
+    &lt;span slot="webcomponent-text">Hello World!&lt;/span>
+&lt;/webassembly-webcomponent>
+
+&lt;webassembly-webcomponent>
+    &lt;ul slot="webcomponent-text">
+    &lt;li>rustwasm&lt;/li>
+    &lt;li>Emscripten&lt;/li>
+    &lt;li>Blazor&lt;/li>
+    &lt;/ul>
+&lt;/webassembly-webcomponent>
+&lt;/body>
+&lt;/html>
+        </code></pre>                  
+        </div>
+<p>
+This is a HTML file that defines a template and CSS style for our Web Component. 
+</p>
+<p>
+By now, you would have noticed that we have defined a "webassembly-webcomponent" tag.
+To use this tag (Web Component), we can specify the following in our HTML file.
+</p>
+<div class="quote-bordered" style="text-align:left;background:black"> 
+<pre><code style="color:white;">
+&lt;webassembly-webcomponent>
+    &lt;span slot="webcomponent-text">Hello World!&lt;/span>
+&lt;/webassembly-webcomponent>
+</code></pre>                  
+</div>
+        
+<p>
+5. Create a "main.js" to load our wasm (WebAssembly) module.
+</p>
+<div class="quote-bordered" style="text-align:left;background:black"> 
+<pre><code style="color:white;">
+export default import('./pkg').catch(console.error);
+</code></pre>                  
+</div>
+        
+<p>
+6. Use a text editor, open "src/lib.rs" and change the contents of the file to the following:
+</p>
+<div class="quote-bordered" style="text-align:left;background:black"> 
+<pre><code style="color:white;">
+use wasm_bindgen::prelude::*;
+use wasm_bindgen::JsCast;
+
+#[wasm_bindgen(prototype=web_sys::HtmlElement)]    
+pub struct WebAssemblyWebComponent;
+
+#[wasm_bindgen]
+impl WebAssemblyWebComponent {
+#[wasm_bindgen(constructor)]
+pub fn new() -> WasmType&lt;WebAssemblyWebComponent> {
+
+    let owned = instantiate! {
+        super();
+        WebAssemblyWebComponent
+    };
+
+    let this = owned.borrow();
+    let window = web_sys::window().unwrap();
+    let document = window.document().unwrap();
+    let template = document
+        .get_element_by_id("webassembly-webcomponent").unwrap()
+        .unchecked_into::&lt;web_sys::HtmlTemplateElement>();
+
+    let template_content = template.content();
+    this.attach_shadow(
+        &web_sys::ShadowRootInit::new(web_sys::ShadowRootMode::Open)
+    ).unwrap()
+        .append_child(&template_content.clone_node_with_deep(true)
+        .unwrap()).unwrap();
+}
+}
+        
+#[wasm_bindgen(start)]        
+pub fn main() {
+
+    console_error_panic_hook::set_once();
+    let window = web_sys::window().unwrap();
+    let document = window.document().unwrap();
+
+    window.custom_elements().define(
+        webassembly-webcomponent",
+        &js_sys::Function::of::&lt;WebAssemblyWebComponent>(),
+
+    ).unwrap();
+
+    let slotted_span = 
+        document.query_selector("webassembly-webcomponent span")
+        .unwrap().unwrap();        
+    web_sys::console::log_1(&slotted_span.assigned_slot().unwrap());        
+    web_sys::console::log_1(&slotted_span.slot().into());
+
+} 
+                </code></pre>                  
+            </div>
+<p>
+    The first part of the rustwasm code above defines a "WebAssemblyWebComponent" struct using "web_sys::HtmlElement". 
+    The template we defined in our HTML page is read in (imported) with the Rust code below.
+</p>
+
+<div class="quote-bordered" style="text-align:left;background:black"> 
+<pre><code style="color:white;">
+.
+.
+.
+let template = document
+.get_element_by_id("webassembly-webcomponent").unwrap()
+.unchecked_into::<web_sys::HtmlTemplateElement>();
+.
+.
+.        
+    </code></pre>                  
+</div>
+
+<p>
+We also use web-sys to perform a DOM (Document Object Model) manipulation to create the element's internal shadow DOM structure. 
+</p>
+<div class="quote-bordered" style="text-align:left;background:black"> 
+<pre><code style="color:white;">
+.
+.
+.
+this.attach_shadow(
+&web_sys::ShadowRootInit::new(web_sys::ShadowRootMode::Open)
+).unwrap()
+.append_child(&template_content.clone_node_with_deep(true)
+.unwrap()).unwrap();
+.
+.
+.        
+</code></pre>                  
+</div>
+<p>
+The "main" function register our custom element. 
+We have also used web_sys::console::log_1 to log the slot placeholder in our Web Component to the browser's console. 
+</p>
+<div class="quote-bordered" style="text-align:left;background:black"> 
+<pre><code style="color:white;">
+.
+.
+.                
+#[wasm_bindgen(start)]        
+pub fn main() {
+
+console_error_panic_hook::set_once();
+let window = web_sys::window().unwrap();
+let document = window.document().unwrap();
+
+window.custom_elements().define(
+"webassembly-webcomponent",
+&js_sys::Function::of::&lt;WebAssemblyWebComponent>(),
+
+).unwrap();
+
+let slotted_span = 
+document.query_selector("webassembly-webcomponent span")
+.unwrap().unwrap();        
+web_sys::console::log_1(&slotted_span.assigned_slot().unwrap());        
+web_sys::console::log_1(&slotted_span.slot().into());
+
+} 
+.
+.
+.                
+</code></pre>                  
+</div>
+        
+<p>
+7. Compile the rustwasm code with the following command. The wasm module is generated in the "pkg" folder.
+</p>
+<p>
+<kbd>wasm-pack build --target web</kbd>
+</p>
+<p>                
+8. Run our development Web Server with the following command.
+</p>
+<p>
+<kbd>python3 -m http.server</kbd>
+</p>
+<p>
+9. You should see the following output on your browser:
+</p>
+<p>
+    [IMAGE]
+</p>
+
+<h5>Web Component Lifecycle callbacks</h5>
+<p>The following lifecycle callbacks of a Web Component are also supported "natively" in rustwasm.  
+    
+<ul class="list-marked">
+    <li>connectedCallback - executed when the element is added to the DOM</li>
+    <li>disconnectedCallback - executed when the element is removed from the DOM</li>
+    <li>adoptedCallback - executed when the element moved to a different page</li>
+    <li>attributeChangedCallback - executed when one of the element's attributes is changed</li>
+</ul>
+
+</p>
+<div class="quote-bordered" style="text-align:left;background:black"> 
+        <pre><code style="color:white;">
+// Specify observed attributes so that
+// attributeChangedCallback will work
+#[wasm_bindgen(getter = observedAttributes)]
+pub fn observed_attributes() -> js_sys::Array {
+.
+.
+.
+}
+
+#[wasm_bindgen(js_name="connectedCallback")]
+pub fn connected_callback(&self) {
+    web_sys::console::log_1(&"connectedCallback.".into());
+}
+
+#[wasm_bindgen(js_name="disconnectedCallback")]
+pub fn disconnected_callback(&self) {
+    web_sys::console::log_1(&"disconnectedCallback.".into());
+}
+
+#[wasm_bindgen(js_name="adoptedCallback")]
+pub fn adopted_callback(&self) {
+    web_sys::console::log_1(&"adoptedCallback.".into());
+}
+
+#[wasm_bindgen(js_name="attributeChangedCallback")]
+pub fn attribute_changed_callback(&self, _name: &str, 
+            _old_value: Option&lt;String>, _new_value: &str) {
+    web_sys::console::log_1(&"attributeChangedCallback.".into());
+}            
+            </code></pre>                  
+        </div>
+        <p></p>
+<h4>Source Code</h4>
+<p>
+        rustwasmWebAssemblyWebComponent.zip
+</p>
+
+<h4>Summary</h4>
+<p>
+Our tutorial and sample have illustrated how you can create a W3C Web Component (Custom Element) "natively using rustwasm WebAssembly, with the help of wasm-bindgen, web-sys and js-sys. 
+If you recall, all our codes involve almost little or almost no JavaScript. Please forgive me for saying this, it appears that rustwasm is attempting to replace JavaScript with Rust in the browser "TOTALLY". Yes, you heard it right, "TOTALLY".
+</p>
+<p>The other thing interesting to note is rustwasm is doing all this without specifically requiring a runtime or framework. 
+This way, you can replace parts of your front-end web application surgically. Alternatively, frameworks that is built on top of rustwasm, has started appearing, to help you replace your front-end application in a "big bang" manner.
+rustwasm flexibility, together with its optimized output code size will appeal to many developers. 
+</p>
+<p>
+Oh, did I forget to mention the WASI (WebAssembly outside the browser) and the Gloo project of rustwasm? 
+</p>
+
+
+             </div>
+      
+
+
+	    
+            <div class="col-lg-4 section-divided__aside section-divided__aside-left">
+
+              <section class="section-md">
+                <h5>WebAssembly</h5>
+                <ul class="list-linked">
+                    <li><a href="webcomponents.html">WebAssembly Web Components</a></li>
+                    <li><a href="wat_webassembly_text_format.html">WebAssembly Text Format</a></li>
+                  <li><a href="webassembly_wat_hello_world.html">WebAssembly WAT Hello World</a></li>
+                  <li><a href="webassembly_data_types.html">WebAssembly Data Types</a></li>
+                  <li><a href="webassembly_control_flow.html">WebAssembly Control Flow</a></li>
+                  <li><a href="webassembly_front_end_web_development.html">WebAssembly Front-End Development</a></li>
+                </ul>
+              </section>
+
+              <section class="section-md">
+                <h5>Blazor Topics</h5>
+                <ul class="list-linked">
+                  <li><a href="blazorhelloworld.html">Blazor Hello World</a></li>
+                  <li><a href="blazor/blazorcomponents.html">Blazor Components</a></li>
+                  <li><a href="blazor/blazoradmindashboard.html">Blazor Dashboard</a></li>
+                  <li><a href="blazor/blazorcharts.html">Blazor Charts</a></li>
+                  <li><a href="blazor/blazordonutchart.html">Blazor Donut Chart</a></li>          
+                  <li><a href="blazor/blazorpiechart.html">Blazor Pie Chart</a></li>
+                  <li><a href="blazor/blazorbarchart.html">Blazor Bar Chart</a></li>          
+                  <li><a href="blazor/blazorlinechart.html">Blazor Line Chart</a></li>          
+                  <li><a href="blazor/blazordatabinding.html">Blazor Data Binding</a></li>
+                  <li><a href="blazor/blazorevents.html">Blazor Events</a></li>
+                  <li><a href="blazor/blazorcascadingvaluesparameters.html">Blazor Cascading Values & Parameters</a></li>
+                  <li><a href="blazor/blazorbuildrendertree.html">Blazor BuildRenderTree</a></li>
+                  <li>Injection (coming soon)</li>
+                  <li>Layout (coming soon)</li>
+                </ul>
+              </section>
+
+              <section class="section-md">
+                <h5>Blazor Syntax</h5>
+                <ul class="list-linked">
+                  <li><a href="blazor/blazorforloop.html">for loop</a></li>
+                  <li><a href="blazor/blazorforeachloop.html">foreach loop</a></li>
+                  <li><a href="blazor/blazorwhiledowhileloop.html">while loop</a></li>
+                  <li><a href="blazor/blazorswitch.html">switch statement</a></li>
+                  <li><a href="blazor/blazorifelseif.html">if, else and else if statement</a></li>
+                </ul>
+              </section>
+              <section class="section-md">
+                <h5>Rust WebAssembly</h5>
+                <ul class="list-linked">
+                  <li><a href="rust_webassembly_hello_world.html">Rust WebAssembly Hello World</a></li>
+                  <li><a href="../rustwasm/frontendframeworksrustwebassembly.html">Front End Frameworks</a></li>
+                  <li><a href="../rustwasm/how_to_manipulate_the_dom_in_rust_webassembly.html">DOM manipulation</a></li> 
+                  <li><a href="../rustwasm/how_to_create_and_access_html_objects_in_rust_webassembly.html">HTML Objects</a></li> 
+                  <li><a href="../rustwasm/how_to_add_an_onclick_event_to_a_button_in_rust_webassembly.html">Button onclick</a></li> 
+                  <li><a href="../rustwasm/how_to_add_mouse_events_in_rust_webassembly.html">Mouse events</a></li>
+                  <li><a href="../rustwasm/how_to_add_keyboard_events_in_rust_webassembly.html">Keyboard events</a></li>      
+                  <li><a href="../rustwasm/how_to_log_to_the_console_in_rust_webassembly.html">Console log</a></li> 
+                  <li><a href="../rustwasm/how_to_add_svg_in_rust_webassembly.html">SVG in Rust WebAssembly</a></li> 
+                  <li><a href="../rustwasm/rustwasm_svg_donut_chart_webcomponent.html">SVG Donut Chart in Rust WebAssembly</a></li> 
+                </ul>
+              </section>
+
+              <section class="section-md">
+                <h5>rustwasm API</h5>
+                <ul class="list-linked">
+                  <li><a href="../rustwasm/wasm-bindgen.html">wasm-bindgen</a></li>
+                  <li><a href="../rustwasm/wasm_bindgen_jsvalue.html">wasm_bindgen::JsValue</a></li>    
+                  <li><a href="../rustwasm/web-sys.html">web-sys</a></li>
+                  <li><a href="../rustwasm/web_sys_console.html">web_sys::console</a></li>
+                  <li><a href="../rustwasm/web_sys_document.html">web_sys::Document</a></li>
+                  <li><a href="../rustwasm/web_sys_htmlcanvaselement.html">web_sys::HtmlCanvasElement</a></li>
+                  <li><a href="../rustwasm/web_sys_canvasrenderingcontext2d.html">web_sys::CanvasRenderingContext2d</a></li>
+                  <li><a href="../rustwasm/web_sys_fontface.html">web_sys::FontFace</a></li>      
+                  <li><a href="../rustwasm/web_sys_svgelement.html">web_sys::SvgElement</a></li>
+                  <li><a href="../rustwasm/js-sys.html">js-sys</a></li>
+                  <li><a href="../rustwasm/js_sys_array.html">js_sys::Array</a></li>
+                  <li><a href="../rustwasm/gloo_events_eventlistener.html">gloo_events::EventListener</a></li>
+                  <li><a href="../rustwasm/wasm-bindgen-futures.html">wasm-bindgen-futures</a></li>
+                  <li><a href="../rustwasm/wasm_bindgen_futures_jsfuture.html">wasm-bindgen-futures::JsFuture</a></li>
+            
+                </ul>
+              </section>
+
+            </div>
+
+
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider-->
+      <div class="container">
+        <div class="divider"></div>
+      </div>
+
+      <section class="pre-footer-corporate" style="display:none">
+        <div class="container">
+          <div class="row justify-content-sm-center justify-content-lg-start row-30 row-md-60">
+
+            <ul class="list-inline-xxs">
+              <li><a class="icon icon-xxs icon-primary fa fa-twitter" href="https://connectcode.twitter.com"></a></li>
+            </ul>
+
+            <div class="col-sm-10 col-md-6 col-lg-3 col-xl-3">
+            </div>
+            <div class="col-sm-10 col-md-6 col-lg-5 col-xl-3">
+            </div>
+            <div class="col-sm-10 col-md-6 col-lg-4 col-xl-3">
+              <ul class="list-xs">
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <footer class="footer-corporate">
+        <div class="container">
+          <div class="footer-corporate__inner">
+            <p class="rights">Copyright <span>https://www.webassemblyMan.com</span><span>&nbsp;</span>2018 - <span id="copyright-year"></span>.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

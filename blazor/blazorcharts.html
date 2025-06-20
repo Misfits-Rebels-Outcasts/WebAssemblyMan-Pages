@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151192680-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-151192680-1');
+    </script>
+    <!-- Site Title-->
+    <title>Blazor Charts</title>
+    <meta content="Blazor Charts"
+			name="description">
+    <meta content="blazor charts, blazor chart libraries, webassembly blazor charts"
+			name="keywords">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Libre+Franklin:200,300,500,600,300italic">
+    <!--
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    -->
+    <link rel=“preload” href=“../fonts//fontawesome-webfont.woff2?v=4.7.0” as=“font”>
+    <link rel="preload" href="../css/bootstrap.min.css" as="style">
+    <link rel="preload" href="../css/style.css" as="style">
+    <link rel="preload" href="../js/core.min.js" as="script">
+    <link rel="preload" href="../js/script.js" as="script">
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css">
+		<!--[if lt IE 10]>
+    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="../images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <script src="../js/html5shiv.min.js"></script>
+		<![endif]-->
+  </head>
+  <body>
+    <!-- Page -->
+    <div class="page">
+      <div id="page-loader">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+      </div>
+      <!-- Page header-->
+            <header class="page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-device-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-stick-up-clone="false" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true" data-lg-stick-up-offset="69px" data-xl-stick-up-offset="1px" data-xxl-stick-up-offset="1px">
+            <div class="rd-navbar-inner">
+              <!-- RD Navbar Panel -->
+              <div class="rd-navbar-panel">
+                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                <!-- RD Navbar Brand-->
+                <div><a href="../index.html" style="color:black;margin-top:2.5px;font-size:22px;">WEBASSEMBLYMAN</a></div>
+              </div>
+              <!-- RD Navbar Nav-->
+              <div class="rd-navbar-nav-wrap">
+
+<ul class="rd-navbar-nav">
+  <li><a href="../index.html">Home</a></li>
+    <li class="active"><a href="#">WebAssembly</a>
+      <ul class="rd-navbar-dropdown">
+          <li><a href="../webcomponents.html">WebAssembly Web Components</a></li>
+          <li><a href="../wat_webassembly_text_format.html">WebAssembly Text Format</a></li>
+            <li><a href="../webassembly_wat_hello_world.html">WebAssembly WAT Hello World</a></li>
+            <li><a href="../webassembly_data_types.html">WebAssembly Data Types</a></li>
+            <li><a href="../webassembly_control_flow.html">WebAssembly Control Flow</a></li>
+            <li><a href="../webassembly_front_end_web_development.html">WebAssembly Front-End Development</a></li>
+          </ul>
+    </li>
+
+    <li class="active"><a href="#">Blazor</a>
+      <ul class="rd-navbar-dropdown">
+        <li><a href="../blazorhelloworld.html">Blazor Hello World</a></li>
+        <li><a href="../blazor/blazorcomponents.html">Blazor Components</a></li>
+        <li><a href="../blazor/blazoradmindashboard.html">Blazor Dashboard</a></li>
+        <li><a href="../blazor/blazorcharts.html">Blazor Charts</a></li>
+        <li><a href="../blazor/blazordonutchart.html">Blazor Donut Chart</a></li>
+        <li><a href="../blazor/blazorpiechart.html">Blazor Pie Chart</a></li>
+        <li><a href="../blazor/blazorbarchart.html">Blazor Bar Chart</a></li>
+        <li><a href="../blazor/blazorlinechart.html">Blazor Line Chart</a></li>
+            <li><a href="../blazor/blazordatabinding.html">Blazor Data Binding</a></li>
+            <li><a href="../blazor/blazorevents.html">Blazor Events</a></li>
+            <li><a href="../blazor/blazorcascadingvaluesparameters.html">Blazor Cascading Values & Parameters</a></li>
+            <li><a href="../blazor/blazorbuildrendertree.html">Blazor BuildRenderTree</a></li>
+            <li><a href="../blazor/blazorforloop.html">for loop</a></li>
+            <li><a href="../blazor/blazorforeachloop.html">foreach loop</a></li>
+            <li><a href="../blazor/blazorwhiledowhileloop.html">while loop</a></li>
+            <li><a href="../blazor/blazorswitch.html">switch statement</a></li>
+            <li><a href="../blazor/blazorifelseif.html">if, else and else if statement</a></li>    
+              </ul>
+    </li>
+    
+  <li class="active"><a href="#">Rust WebAssembly</a>
+  <ul class="rd-navbar-dropdown">
+    <li><a href="../rust_webassembly_hello_world.html">Rust WebAssembly Hello World</a></li>
+    <li><a href="../rustwasm/frontendframeworksrustwebassembly.html">Front End Frameworks</a></li> 
+    <li><a href="../rustwasm/how_to_manipulate_the_dom_in_rust_webassembly.html">DOM manipulation</a></li> 
+    <li><a href="../rustwasm/how_to_create_and_access_html_objects_in_rust_webassembly.html">HTML Objects</a></li> 
+    <li><a href="../rustwasm/how_to_add_an_onclick_event_to_a_button_in_rust_webassembly.html">Button onclick</a></li> 
+    <li><a href="../rustwasm/how_to_add_mouse_events_in_rust_webassembly.html">Mouse events</a></li> 
+    <li><a href="../rustwasm/how_to_add_keyboard_events_in_rust_webassembly.html">Keyboard events</a></li>     
+    <li><a href="../rustwasm/how_to_log_to_the_console_in_rust_webassembly.html">Console log</a></li> 
+    <li><a href="../rustwasm/how_to_add_svg_in_rust_webassembly.html">SVG in Rust WebAssembly</a></li> 
+    <li><a href="../rustwasm/rustwasm_svg_donut_chart_webcomponent.html">SVG Donut Chart in Rust WebAssembly</a></li> 
+
+    
+
+  </ul>
+
+  </li>
+  <li class="active"><a href="#">rustwasm API</a>
+    <ul class="rd-navbar-dropdown">
+      <li><a href="../rustwasm/wasm-bindgen.html">wasm-bindgen</a></li>
+      <li><a href="../rustwasm/wasm_bindgen_jsvalue.html">wasm_bindgen::JsValue</a></li>    
+      <li><a href="../rustwasm/web-sys.html">web-sys</a></li>
+      <li><a href="../rustwasm/web_sys_console.html">web_sys::console</a></li>
+      <li><a href="../rustwasm/web_sys_document.html">web_sys::Document</a></li>
+      <li><a href="../rustwasm/web_sys_htmlcanvaselement.html">web_sys::HtmlCanvasElement</a></li>
+      <li><a href="../rustwasm/web_sys_canvasrenderingcontext2d.html">web_sys::CanvasRenderingContext2d</a></li>
+      <li><a href="../rustwasm/web_sys_fontface.html">web_sys::FontFace</a></li>      
+      <li><a href="../rustwasm/web_sys_svgelement.html">web_sys::SvgElement</a></li>
+      <li><a href="../rustwasm/js-sys.html">js-sys</a></li>
+      <li><a href="../rustwasm/js_sys_array.html">js_sys::Array</a></li>    
+      <li><a href="../rustwasm/gloo_events_eventlistener.html">gloo_events::EventListener</a></li>
+
+      <li><a href="../rustwasm/wasm-bindgen-futures.html">wasm-bindgen-futures</a></li>
+      <li><a href="../rustwasm/wasm_bindgen_futures_jsfuture.html">wasm-bindgen-futures::JsFuture</a></li>
+  
+    </ul>
+    </li>
+  
+</ul>
+
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+
+            <section class="breadcrumbs-custom">
+        <div class="container">
+          <div class="breadcrumbs-custom__inner">
+            <p class="breadcrumbs-custom__title">Man(ual) page for WebAssembly</p>
+            <ul class="breadcrumbs-custom__path">
+              <li><a href="../index.html">Home</a></li>
+              <li class="active">Blazor</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="bg-default section-lg">
+        <div class="container">
+          <div class="row row-60 justify-content-sm-center">
+            <div class="col-lg-8 section-divided__main">
+
+
+	      <h3>Blazor Charts</h3>
+<p>
+    <i>Elegantly Simple WebAssembly Blazor Charts</i>
+</p>
+<p>
+    This is a collection of Blazor Charts that are Elegantly Simple with the following key design principles:
+</p>
+<p>
+<ul class="list-marked">
+    <li>Simple as in Less is More <br />
+        The components or charts aim to be good enough for most people, and is simple and easy to use.     
+    </li>
+    <li>Vanilla and Minimal Dependencies <br />
+        The components or charts are developed with minimal dependencies to external libraries or frameworks.
+        Wherever possible, it utilizes the underlying programming language in a plain vanilla manner.     
+    </li>
+    <li>Adaptable<br />
+        The component or chart being simple, vanilla and with minimal dependencies makes it adaptable. 
+        Whenever the platform or framework changes, it is easy to adapt the chart to keep it current and up to date.
+            </li>
+    <li>Elegant as in easy to understand and change <br />
+        The source code is structured to be easy to understand, compile, change, extend or port.
+    </li>
+</ul>
+</p>
+<h3>Type of Charts</h3>
+<p>
+<ul class="list-marked">
+    <li><a href=blazordonutchart.html>Donut Chart</a></li>
+    <li><a href=blazorpiechart.html>Pie Chart</a></li>
+    <li><a href=blazorbarchart.html>Horizontal Bar Chart</a></li>
+    <li><a href=blazorbarchart.html#verticalbarchart>Vertical Bar Chart</a></li>
+    <li><a href=blazorlinechart.html>Line Chart</a></li>
+    <li>Sparkline</li>
+    <li>Sparkline Columns</li>
+    <li>Win Lose</li>
+    <li>Win Lose Draw</li>
+    <li>Bullet Bars</li>
+    <li>Bar Graphs</li>
+    <li>Mini Pie</li>    
+</ul>
+</p>
+<h5>Source Code</h5>
+<p>
+<ul class="list-marked">
+ <li>GitHub - <a href=https://github.com/Misfits-Rebels-Outcasts/Blazor-Charts rel="nofollow">Blazor Charts</a></li>
+<ul></ul>
+</p>
+<h5>How to build and use the charts?</h5>
+<p>
+Using the dotnet CLI, create a new Blazor project
+</p>
+<kbd>dotnet new blazorwasm -o BlazorProject</kbd>
+<p>
+Clone the Blazor Charts Library
+</p>
+<kbd>git clone https://github.com/Misfits-Rebels-Outcasts/Blazor-Charts.git</kbd>
+<p>
+Add a reference from the BlazorProject to specific Blazor Charts Library. Go to the BlazorProject folder, edit the BlazorProject.csproj and add in the following:
+</p>
+
+<div class="quote-bordered" style="text-align:left;background:black"> 
+    <pre><code style="color:white;">
+
+&lt;Project...> 
+.
+.
+.
+&lt;ItemGroup>
+    &lt;ProjectReference Include="../Blazor-Charts/DonutChart/DonutChart.csproj" />
+
+&lt;/ItemGroup>
+&lt;/Project>
+
+</code></pre></div>
+<p>
+If you are using other charts such as the Pie Chart, change the above to "../Blazor-Charts/PieChart/PieChart.csproj".     
+</p>
+<p>
+Edit Index.razor in the Pages folder of the BlazorProject
+</p>
+<div class="quote-bordered" style="text-align:left;background:black"> 
+<pre><code style="color:white;">
+@using WebAssemblyMan
+
+@page "/"
+
+&lt;h1>Hello, world!&lt;/h1>
+
+Welcome to your new app.
+
+&lt;DonutChart InputData="10,30,20,10,10,10,5,5" 
+                   InputLabels="App Store,Website,Partners,
+                   Direct,Channels,Retail,Distributors,Affiliates">
+&lt;/DonutChart>
+  
+&lt;SurveyPrompt Title="How is Blazor working for you?" />
+</code></pre></div>
+<p>
+@using enables us to use the Blazor Charts library.  &lt;DonutChart> is the tag where we declare to use our chart component.
+If you are using other charts such as the Pie Chart, change the above to "&lt;PieChart InputData="50,30,20" ...>&lt;PieChart>".         
+</p>
+<p>
+Edit index.html to include the Chart Stylesheet.
+</p>
+<div class="quote-bordered" style="text-align:left;background:black"> 
+<pre><code style="color:white;">
+&lt;!DOCTYPE html>
+&lt;html>
+
+&lt;head>
+    .
+    .
+    .
+    &lt;link href="_content/DonutChart/styles.css" rel="stylesheet" />
+&lt;head>
+
+&lt;body>
+.
+.
+.
+&lt;/body>
+
+&lt;/html>    
+</code></pre></div>
+</p>
+<p>
+    If you are using other charts such as the Pie Chart, change the above to "&lt;link href="_content/PieChart/styles.css" rel="stylesheet" />".         
+</p>
+<p>
+    Run the BlazorProject
+</p>
+<kbd>dotnet run</kbd>
+<p>
+    You should see a web page with the Blazor chart.
+</p>
+
+<h4>Our Philosophy</h4>
+<p>
+Have you thought about how many times you use, reuse, written or rewritten your components and charts? Everyday, day after day, components after components and charts after charts. 
+We definitely have. That is why we build own components and charts to be adaptable, vanilla with minimal dependencies and elegantly simple. 
+The Elegantly Simple design ensures our components and charts are build to last. As new frameworks and libraries are released, you will be able to easily adapt the components charts to the new version.
+When you hire new people to maintain a project utilizing these components and charts, they will have no problems understanding how the components and charts work.
+</p>
+<p>
+We provide good documentation on the components and charts so that you do not need to guess or figure out how we have designed and implemented them.
+</p>
+<p>
+We also test our components and charts with different scenarios vigorously, so that you know you can be assured of its quality, robustness and reliability. 
+</p>
+<p>
+Whether you are a project manager, software developer or business executive from a Fortune 500 company, or a free-lancer, a consultant or an entrepreneur joining the business world, we hope that you will find our WebAssembly components and charts useful as we have put together our best experience, invest our best effort and time to develop them.
+</p>
+
+
+
+             </div>
+      
+
+
+	    
+            <div class="col-lg-4 section-divided__aside section-divided__aside-left">
+
+              <section class="section-md">
+                <h5>WebAssembly</h5>
+                <ul class="list-linked">
+                    <li><a href="../webcomponents.html">WebAssembly Web Components</a></li>
+                    <li><a href="../wat_webassembly_text_format.html">WebAssembly Text Format</a></li>
+                  <li><a href="../webassembly_wat_hello_world.html">WebAssembly WAT Hello World</a></li>
+                  <li><a href="../webassembly_data_types.html">WebAssembly Data Types</a></li>
+                  <li><a href="../webassembly_control_flow.html">WebAssembly Control Flow</a></li>
+                  <li><a href="../webassembly_front_end_web_development.html">WebAssembly Front-End Development</a></li>
+                </ul>
+              </section>
+
+              <section class="section-md">
+                <h5>Blazor Topics</h5>
+                <ul class="list-linked">
+                  <li><a href="../blazorhelloworld.html">Blazor Hello World</a></li>
+                  <li><a href="../blazor/blazorcomponents.html">Blazor Components</a></li>
+                  <li><a href="../blazor/blazoradmindashboard.html">Blazor Dashboard</a></li>
+                  <li><a href="../blazor/blazorcharts.html">Blazor Charts</a></li>
+                  <li><a href="../blazor/blazordonutchart.html">Blazor Donut Chart</a></li>          
+                  <li><a href="../blazor/blazorpiechart.html">Blazor Pie Chart</a></li>      
+                  <li><a href="../blazor/blazorbarchart.html">Blazor Bar Chart</a></li>    
+                  <li><a href="../blazor/blazorlinechart.html">Blazor Line Chart</a></li>    
+                  <li><a href="../blazor/blazordatabinding.html">Blazor Data Binding</a></li>
+                  <li><a href="../blazor/blazorevents.html">Blazor Events</a></li>
+                  <li><a href="../blazor/blazorcascadingvaluesparameters.html">Blazor Cascading Values & Parameters</a></li>
+                  <li><a href="../blazor/blazorbuildrendertree.html">Blazor BuildRenderTree</a></li>
+                  <li>Injection (coming soon)</li>
+                  <li>Layout (coming soon)</li>
+                </ul>
+              </section>
+            <section class="section-md">
+                <h5>Blazor Syntax</h5>
+                <ul class="list-linked">
+                  <li><a href="../blazor/blazorforloop.html">for loop</a></li>
+                  <li><a href="../blazor/blazorforeachloop.html">foreach loop</a></li>
+                  <li><a href="../blazor/blazorwhiledowhileloop.html">while loop</a></li>
+                  <li><a href="../blazor/blazorswitch.html">switch statement</a></li>
+                  <li><a href="../blazor/blazorifelseif.html">if, else and else if statement</a></li>
+                </ul>
+              </section>
+  
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider-->
+      <div class="container">
+        <div class="divider"></div>
+      </div>
+
+      <section class="pre-footer-corporate" style="display:none">
+        <div class="container">
+          <div class="row justify-content-sm-center justify-content-lg-start row-30 row-md-60">
+
+            <ul class="list-inline-xxs">
+              <li><a class="icon icon-xxs icon-primary fa fa-twitter" href="https://connectcode.twitter.com"></a></li>
+            </ul>
+
+            <div class="col-sm-10 col-md-6 col-lg-3 col-xl-3">
+            </div>
+            <div class="col-sm-10 col-md-6 col-lg-5 col-xl-3">
+            </div>
+            <div class="col-sm-10 col-md-6 col-lg-4 col-xl-3">
+              <ul class="list-xs">
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <footer class="footer-corporate">
+        <div class="container">
+          <div class="footer-corporate__inner">
+            <p class="rights">Copyright <span>https://www.webassemblyMan.com</span><span>&nbsp;</span>2018 - <span id="copyright-year"></span>.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="../js/core.min.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>

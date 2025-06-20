@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151192680-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-151192680-1');
+    </script>
+    <!-- Site Title-->
+    <title>Blazor Events</title>
+    <meta content="Blazor Events"
+			name="description">
+    <meta content="blazor events, DOM events, user-defined events, custom events"
+			name="keywords">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Libre+Franklin:200,300,500,600,300italic">
+    <!--
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    -->
+    <link rel=“preload” href=“../fonts//fontawesome-webfont.woff2?v=4.7.0” as=“font”>
+    <link rel="preload" href="../css/bootstrap.min.css" as="style">
+    <link rel="preload" href="../css/style.css" as="style">
+    <link rel="preload" href="../js/core.min.js" as="script">
+    <link rel="preload" href="../js/script.js" as="script">
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css">
+		<!--[if lt IE 10]>
+    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="../images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <script src="../js/html5shiv.min.js"></script>
+		<![endif]-->
+  </head>
+  <body>
+    <!-- Page -->
+    <div class="page">
+      <div id="page-loader">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+      </div>
+      <!-- Page header-->
+            <header class="page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-device-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-stick-up-clone="false" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true" data-lg-stick-up-offset="69px" data-xl-stick-up-offset="1px" data-xxl-stick-up-offset="1px">
+            <div class="rd-navbar-inner">
+              <!-- RD Navbar Panel -->
+              <div class="rd-navbar-panel">
+                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                <!-- RD Navbar Brand-->
+                <div><a href="../index.html" style="color:black;margin-top:2.5px;font-size:22px;">WEBASSEMBLYMAN</a></div>
+              </div>
+              <!-- RD Navbar Nav-->
+              <div class="rd-navbar-nav-wrap">
+
+<ul class="rd-navbar-nav">
+  <li><a href="../index.html">Home</a></li>
+    <li class="active"><a href="#">WebAssembly</a>
+      <ul class="rd-navbar-dropdown">
+          <li><a href="../webcomponents.html">WebAssembly Web Components</a></li>
+          <li><a href="../wat_webassembly_text_format.html">WebAssembly Text Format</a></li>
+            <li><a href="../webassembly_wat_hello_world.html">WebAssembly WAT Hello World</a></li>
+            <li><a href="../webassembly_data_types.html">WebAssembly Data Types</a></li>
+            <li><a href="../webassembly_control_flow.html">WebAssembly Control Flow</a></li>
+            <li><a href="../webassembly_front_end_web_development.html">WebAssembly Front-End Development</a></li>
+          </ul>
+    </li>
+
+    <li class="active"><a href="#">Blazor</a>
+      <ul class="rd-navbar-dropdown">
+        <li><a href="../blazorhelloworld.html">Blazor Hello World</a></li>
+        <li><a href="../blazor/blazorcomponents.html">Blazor Components</a></li>
+        <li><a href="../blazor/blazoradmindashboard.html">Blazor Dashboard</a></li>
+        <li><a href="../blazor/blazorcharts.html">Blazor Charts</a></li>
+        <li><a href="../blazor/blazordonutchart.html">Blazor Donut Chart</a></li>
+        <li><a href="../blazor/blazorpiechart.html">Blazor Pie Chart</a></li>
+        <li><a href="../blazor/blazorbarchart.html">Blazor Bar Chart</a></li>
+        <li><a href="../blazor/blazorlinechart.html">Blazor Line Chart</a></li>
+            <li><a href="../blazor/blazordatabinding.html">Blazor Data Binding</a></li>
+            <li><a href="../blazor/blazorevents.html">Blazor Events</a></li>
+            <li><a href="../blazor/blazorcascadingvaluesparameters.html">Blazor Cascading Values & Parameters</a></li>
+            <li><a href="../blazor/blazorbuildrendertree.html">Blazor BuildRenderTree</a></li>
+            <li><a href="../blazor/blazorforloop.html">for loop</a></li>
+            <li><a href="../blazor/blazorforeachloop.html">foreach loop</a></li>
+            <li><a href="../blazor/blazorwhiledowhileloop.html">while loop</a></li>
+            <li><a href="../blazor/blazorswitch.html">switch statement</a></li>
+            <li><a href="../blazor/blazorifelseif.html">if, else and else if statement</a></li>    
+              </ul>
+    </li>
+    
+  <li class="active"><a href="#">Rust WebAssembly</a>
+  <ul class="rd-navbar-dropdown">
+    <li><a href="../rust_webassembly_hello_world.html">Rust WebAssembly Hello World</a></li>
+    <li><a href="../rustwasm/frontendframeworksrustwebassembly.html">Front End Frameworks</a></li> 
+    <li><a href="../rustwasm/how_to_manipulate_the_dom_in_rust_webassembly.html">DOM manipulation</a></li> 
+    <li><a href="../rustwasm/how_to_create_and_access_html_objects_in_rust_webassembly.html">HTML Objects</a></li> 
+    <li><a href="../rustwasm/how_to_add_an_onclick_event_to_a_button_in_rust_webassembly.html">Button onclick</a></li> 
+    <li><a href="../rustwasm/how_to_add_mouse_events_in_rust_webassembly.html">Mouse events</a></li> 
+    <li><a href="../rustwasm/how_to_add_keyboard_events_in_rust_webassembly.html">Keyboard events</a></li>     
+    <li><a href="../rustwasm/how_to_log_to_the_console_in_rust_webassembly.html">Console log</a></li> 
+    <li><a href="../rustwasm/how_to_add_svg_in_rust_webassembly.html">SVG in Rust WebAssembly</a></li> 
+    <li><a href="../rustwasm/rustwasm_svg_donut_chart_webcomponent.html">SVG Donut Chart in Rust WebAssembly</a></li> 
+
+    
+
+  </ul>
+
+  </li>
+  <li class="active"><a href="#">rustwasm API</a>
+    <ul class="rd-navbar-dropdown">
+      <li><a href="../rustwasm/wasm-bindgen.html">wasm-bindgen</a></li>
+      <li><a href="../rustwasm/wasm_bindgen_jsvalue.html">wasm_bindgen::JsValue</a></li>    
+      <li><a href="../rustwasm/web-sys.html">web-sys</a></li>
+      <li><a href="../rustwasm/web_sys_console.html">web_sys::console</a></li>
+      <li><a href="../rustwasm/web_sys_document.html">web_sys::Document</a></li>
+      <li><a href="../rustwasm/web_sys_htmlcanvaselement.html">web_sys::HtmlCanvasElement</a></li>
+      <li><a href="../rustwasm/web_sys_canvasrenderingcontext2d.html">web_sys::CanvasRenderingContext2d</a></li>
+      <li><a href="../rustwasm/web_sys_fontface.html">web_sys::FontFace</a></li>      
+      <li><a href="../rustwasm/web_sys_svgelement.html">web_sys::SvgElement</a></li>
+      <li><a href="../rustwasm/js-sys.html">js-sys</a></li>
+      <li><a href="../rustwasm/js_sys_array.html">js_sys::Array</a></li>    
+      <li><a href="../rustwasm/gloo_events_eventlistener.html">gloo_events::EventListener</a></li>
+
+      <li><a href="../rustwasm/wasm-bindgen-futures.html">wasm-bindgen-futures</a></li>
+      <li><a href="../rustwasm/wasm_bindgen_futures_jsfuture.html">wasm-bindgen-futures::JsFuture</a></li>
+  
+    </ul>
+    </li>
+  
+</ul>
+
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+
+            <section class="breadcrumbs-custom">
+        <div class="container">
+          <div class="breadcrumbs-custom__inner">
+            <p class="breadcrumbs-custom__title">Man(ual) page for WebAssembly</p>
+            <ul class="breadcrumbs-custom__path">
+              <li><a href="../index.html">Home</a></li>
+              <li class="active">Blazor</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="bg-default section-lg">
+        <div class="container">
+          <div class="row row-60 justify-content-sm-center">
+            <div class="col-lg-8 section-divided__main">
+
+
+	      <h3>Blazor Events</h3>
+<p>
+    Blazor supports the event programming model through binding. You can bind DOM events such as onclick, onchange or others to a function and trigger it by a user interaction.
+    You can also define a user-defined event and enable the event to be binded to callback functions.
+</p>
+<h4>DOM Events</h4>
+<p>
+The following illustrates binding onclick event to a function named Print. If you click on the Click Here button, the Print function will be executed
+and the "Button Clicked!" text will be displayed in the browser's console.
+</p>
+
+<div class="quote-bordered" style="text-align:left;background:black"> 
+<pre><code style="color:white;">@page "/"
+&lt;h3>DOM Events&lt;/h3>
+
+&lt;button @onclick=Print>Click Here&lt;/button>
+
+@functions {
+    private void Print()
+    {
+    Console.WriteLine("Button Clicked!");
+    }
+}</code></pre></div>
+
+<p>
+    A Lambda expression can also be used to specify the function to execute. The following code achieve the same thing as the above. 
+</p>
+
+<div class="quote-bordered" style="text-align:left;background:black"> 
+<pre><code style="color:white;">@page "/"
+&lt;h3>DOM Events&lt;/h3>
+
+&lt;button @onclick=@(() => Print())>ClickHere&lt;/button>
+
+@functions {
+  private void Print()
+  {
+    Console.WriteLine("Button Clicked!");
+  }
+}</code></pre></div>
+<p>
+    Using a Lambda expression can help you reduce the number of lines of code and make your code simpler in some situations.
+
+</p>
+
+<div class="quote-bordered" style="text-align:left;background:black"> 
+<pre><code style="color:white;">@page "/"
+&lt;h3>DOM Events&lt;/h3>
+
+&lt;button @onclick=@(() => {Console.WriteLine("Button Clicked!");})>ClickHere&lt;button>
+
+@functions {
+}</code></pre></div>
+<br />
+<h4>Event Data</h4>
+<p>
+    Event data such as MouseEventArgs can be specified in the event function. In our example below, the event data arguments enables us to access properties of the mouse event such as ClientX, ClientY and others.
+
+</p>
+
+<div class="quote-bordered" style="text-align:left;background:black"> 
+<pre><code style="color:white;">@page "/"
+&lt;h3>onclick Events&lt;/h3>
+
+&lt;button @onclick=@((e) => Print(e))>ClickHere&lt;/button>
+
+@functions {
+  private void Print(MouseEventArgs e)
+  {
+    Console.WriteLine("X :"+e.ClientX+" Y :"+e.ClientY);
+  }
+}</code></pre></div>
+<p>
+    The following is another example showing how to access the KeyboardEventArgs with the onkeypress event.
+</p>
+
+<div class="quote-bordered" style="text-align:left;background:black"> 
+<pre><code style="color:white;">@page "/"
+    
+&lt;h3>onkeypress Event&lt;/h3>
+&lt;input type="text" @onkeypress="@(e => KeyWasPressed(e))" />
+
+@functions {
+  private void KeyWasPressed(KeyboardEventArgs args)
+  {
+    if (args.Key == "r")
+    {
+      Console.WriteLine("R was pressed");
+    }
+  }
+}</code></pre></div>
+<p>
+    And the onchange event with the ChangeEventArgs.
+</p>
+
+<div class="quote-bordered" style="text-align:left;background:black"> 
+<pre><code style="color:white;">@page "/"
+&lt;h3>onchange Event&lt;/h3>
+
+&lt;label>
+&lt;input type="checkbox" @onchange=CheckboxChanged />
+New York
+&lt;/label>
+
+@functions {
+    void CheckboxChanged(ChangeEventArgs e)
+    {
+        Console.WriteLine("CheckboxChanged");
+    }
+}</code></pre></div>
+<br />
+<h4>User-defined Event</h4>
+<p>
+
+Besides DOM events, Blazor also supports user-defined or custom events. For example, if you have a parent and a child component
+, and you want the parent to execute a function (callback function) when certain conditions in the child component occur, you can define a user-defined event. 
+</p>
+<p>
+    You can add the following into the child component to define a user-defined event: 
+</p>
+
+<div class="quote-bordered" style="text-align:left;background:black"> 
+<pre><code style="color:white;">[Parameter]
+Action SomethingChanged { get; set; }</code></pre></div>
+
+<p>
+    This enables you to use the child component in the following manner:
+</p>
+
+<div class="quote-bordered" style="text-align:left;background:black"> 
+<pre><code style="color:white;">
+&lt;Component1 SomethingChanged=SomeCallBackFunctionInTheParent>
+&lt;/Component1>
+</code></pre></div>
+<p>
+    The following is a complete Blazor sample with parent and child component codes. When a button in the child component is clicked, the parent callback function will be executed to update a message variable.  
+</p>
+
+<p>
+    <strong>MySomethingComponent.cshtml (Child Component)</strong>
+</p>
+<div class="quote-bordered" style="text-align:left;background:black"> 
+<pre><code style="color:white;">
+&lt;button @onclick=ButtonClick>ClickHere&lt;/button>
+
+@functions {
+  private void ButtonClick()
+  {
+    Console.WriteLine("Calling SomethingChanged Action");
+    SomethingChanged();
+  }
+
+  [Parameter]
+  public Action SomethingChanged { get; set; }
+}
+</code></pre></div>
+
+<p>
+    <strong>index.cshtml (Parent Page)</strong>
+</p>
+
+<div class="quote-bordered" style="text-align:left;background:black"> 
+<pre><code style="color:white;">
+@using MySomethingComponent;
+
+@page "/"
+
+&lt;Mysomething SomethingChanged=ChangeMessage>&lt;/MySomething>
+
+&lt;p>@message&lt;/p>
+
+@functions {
+
+  string message;
+  private void ChangeMessage()
+  {
+    Console.WriteLine("ChangeMessage");
+    message="Message Changed";
+    StateHasChanged();
+  }
+
+}
+</code></pre></div>
+
+
+
+
+
+             </div>
+      
+
+
+	    
+            <div class="col-lg-4 section-divided__aside section-divided__aside-left">
+
+              <section class="section-md">
+                <h5>WebAssembly</h5>
+                <ul class="list-linked">
+                    <li><a href="../webcomponents.html">WebAssembly Web Components</a></li>
+                    <li><a href="../wat_webassembly_text_format.html">WebAssembly Text Format</a></li>
+                  <li><a href="../webassembly_wat_hello_world.html">WebAssembly WAT Hello World</a></li>
+                  <li><a href="../webassembly_data_types.html">WebAssembly Data Types</a></li>
+                  <li><a href="../webassembly_control_flow.html">WebAssembly Control Flow</a></li>
+                  <li><a href="../webassembly_front_end_web_development.html">WebAssembly Front-End Development</a></li>
+                </ul>
+              </section>
+
+              <section class="section-md">
+                <h5>Blazor Topics</h5>
+                <ul class="list-linked">
+                  <li><a href="../blazorhelloworld.html">Blazor Hello World</a></li>
+                  <li><a href="../blazor/blazorcomponents.html">Blazor Components</a></li>
+                  <li><a href="../blazor/blazoradmindashboard.html">Blazor Dashboard</a></li>
+                  <li><a href="../blazor/blazorcharts.html">Blazor Charts</a></li>
+                  <li><a href="../blazor/blazordonutchart.html">Blazor Donut Chart</a></li>          
+                  <li><a href="../blazor/blazorpiechart.html">Blazor Pie Chart</a></li>      
+                  <li><a href="../blazor/blazorbarchart.html">Blazor Bar Chart</a></li>    
+                  <li><a href="../blazor/blazorlinechart.html">Blazor Line Chart</a></li>    
+                  <li><a href="../blazor/blazordatabinding.html">Blazor Data Binding</a></li>
+                  <li><a href="../blazor/blazorevents.html">Blazor Events</a></li>
+                  <li><a href="../blazor/blazorcascadingvaluesparameters.html">Blazor Cascading Values & Parameters</a></li>
+                  <li><a href="../blazor/blazorbuildrendertree.html">Blazor BuildRenderTree</a></li>
+                  <li>Injection (coming soon)</li>
+                  <li>Layout (coming soon)</li>
+                </ul>
+              </section>
+            <section class="section-md">
+                <h5>Blazor Syntax</h5>
+                <ul class="list-linked">
+                  <li><a href="../blazor/blazorforloop.html">for loop</a></li>
+                  <li><a href="../blazor/blazorforeachloop.html">foreach loop</a></li>
+                  <li><a href="../blazor/blazorwhiledowhileloop.html">while loop</a></li>
+                  <li><a href="../blazor/blazorswitch.html">switch statement</a></li>
+                  <li><a href="../blazor/blazorifelseif.html">if, else and else if statement</a></li>
+                </ul>
+              </section>
+  
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider-->
+      <div class="container">
+        <div class="divider"></div>
+      </div>
+
+      <section class="pre-footer-corporate" style="display:none">
+        <div class="container">
+          <div class="row justify-content-sm-center justify-content-lg-start row-30 row-md-60">
+
+            <ul class="list-inline-xxs">
+              <li><a class="icon icon-xxs icon-primary fa fa-twitter" href="https://connectcode.twitter.com"></a></li>
+            </ul>
+
+            <div class="col-sm-10 col-md-6 col-lg-3 col-xl-3">
+            </div>
+            <div class="col-sm-10 col-md-6 col-lg-5 col-xl-3">
+            </div>
+            <div class="col-sm-10 col-md-6 col-lg-4 col-xl-3">
+              <ul class="list-xs">
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <footer class="footer-corporate">
+        <div class="container">
+          <div class="footer-corporate__inner">
+            <p class="rights">Copyright <span>https://www.webassemblyMan.com</span><span>&nbsp;</span>2018 - <span id="copyright-year"></span>.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="../js/core.min.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>

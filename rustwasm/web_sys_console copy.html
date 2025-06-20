@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <!-- Site Title-->
+    <title>web_sys console</title>
+    <meta content="web_sys console module"
+			name="description">
+    <meta content="web_sys console, console module"
+			name="keywords">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Libre+Franklin:200,300,500,600,300italic">
+    <!--
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    -->
+    <link rel=“preload” href=“../fonts//fontawesome-webfont.woff2?v=4.7.0” as=“font”>
+    <link rel="preload" href="../css/bootstrap.min.css" as="style">
+    <link rel="preload" href="../css/style.css" as="style">
+    <link rel="preload" href="../js/core.min.js" as="script">
+    <link rel="preload" href="../js/script.js" as="script">
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css">
+		<!--[if lt IE 10]>
+    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="../images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <script src="../js/html5shiv.min.js"></script>
+		<![endif]-->
+  </head>
+  <body>
+    <!-- Page -->
+    <div class="page">
+      <div id="page-loader">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+      </div>
+      <!-- Page header-->
+            <header class="page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-device-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-stick-up-clone="false" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true" data-lg-stick-up-offset="69px" data-xl-stick-up-offset="1px" data-xxl-stick-up-offset="1px">
+            <div class="rd-navbar-inner">
+              <!-- RD Navbar Panel -->
+              <div class="rd-navbar-panel">
+                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                <!-- RD Navbar Brand-->
+                <div><a href="../index.html" style="color:black;margin-top:2.5px;font-size:22px;">WEBASSEMBLYMAN</a></div>
+              </div>
+              <!-- RD Navbar Nav-->
+              <div class="rd-navbar-nav-wrap">
+
+<ul class="rd-navbar-nav">
+  <li><a href="../index.html">Home</a>
+    <li class="active"><a href="#">WebAssembly</a>
+      <ul class="rd-navbar-dropdown">
+            <li><a href="../wat_webassembly_text_format.html">WebAssembly Text Format</a></li>
+            <li><a href="../webassembly_wat_hello_world.html">WebAssembly WAT Hello World</a></li>
+            <li><a href="../webassembly_data_types.html">WebAssembly Data Types</a></li>
+            <li><a href="../webassembly_control_flow.html">WebAssembly Control Flow</a></li>
+            <li><a href="../webassembly_front_end_web_development.html">WebAssembly Front-End Development</a></li>
+          </ul>
+    </li>
+
+    <li class="active"><a href="#">Blazor</a>
+      <ul class="rd-navbar-dropdown">
+            <li><a href="../blazor/blazorcomponents.html">Blazor Components</a></li>
+            <li><a href="../blazor/blazordatabinding.html">Blazor Data Binding</a></li>
+            <li><a href="../blazor/blazorevents.html">Blazor Events</a></li>
+            <li><a href="../blazor/blazorcascadingvaluesparameters.html">Blazor Cascading Values & Parameters</a></li>
+            <li><a href="../blazor/blazorbuildrendertree.html">Blazor BuildRenderTree</a></li>
+            <li><a href="../blazor/blazorforloop.html">for loop</a></li>
+            <li><a href="../blazor/blazorforeachloop.html">foreach loop</a></li>
+            <li><a href="../blazor/blazorwhiledowhileloop.html">while loop</a></li>
+            <li><a href="../blazor/blazorswitch.html">switch statement</a></li>
+            <li><a href="../blazor/blazorifelseif.html">if, else and else if statement</a></li>    
+              </ul>
+    </li>
+    
+  <li class="active"><a href="#">rustwasm</a>
+  <ul class="rd-navbar-dropdown">
+    <li><a href="../rust_webassembly_hello_world.html">Rust WebAssembly Hello World</a></li>
+    <li><a href="../rustwasm/wasm-bindgen.html">wasm-bindgen</a></li>
+    <li><a href="../rustwasm/web_sys.html">web_sys</a></li>
+    <li><a href="../rustwasm/web_sys_console.html">web_sys console</a></li>
+  </ul>
+</li>
+
+</ul>
+
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+
+            <section class="breadcrumbs-custom">
+        <div class="container">
+          <div class="breadcrumbs-custom__inner">
+            <p class="breadcrumbs-custom__title">Man(ual) page for WebAssembly</p>
+            <ul class="breadcrumbs-custom__path">
+              <li><a href="../index.html">Home</a></li>
+              <li class="active">rustwasm</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="bg-default section-lg">
+        <div class="container">
+          <div class="row row-60 justify-content-sm-center">
+            <div class="col-lg-8 section-divided__main">
+
+
+	                     <h3>web_sys console</h3>
+                <p>web_sys console</p>
+                <h4>Functions</h4>
+                <ul class="list-marked">
+                    <li>assert - The console.assert() function
+                        <div class="quote-bordered" style="text-align:left;background:black"> 
+                        <pre><code style="color:white;">
+    #[wasm_bindgen(start)]
+    pub fn main() -> Result&lt;(), JsValue> {
+        web_sys::console::assert();     
+        Ok(())
+    }
+                        </code></pre>                  
+                        </div>                        
+                    </li>
+                    <li>assert_with_condition_and_data - The console.assert() function
+                        <div class="quote-bordered" style="text-align:left;background:black"> 
+                            <pre><code style="color:white;">
+    #[wasm_bindgen(start)]
+    pub fn main() -> Result&lt;(), JsValue> {
+        let x=5u32;
+        let y=10u32;   
+        let z=15u32; 
+        let array = js_sys::Array::new();
+        array.push(&"Assertion Failed".into());
+        web_sys::console::assert_with_condition_and_data(x&lt;y,&array);
+        //Assertion failed                                
+        web_sys::console::assert_with_condition_and_data(z&lt;y,&array); 
+        Ok(())
+    }                                
+                            </code></pre>                  
+                            </div>                            
+                    </li>
+                    <li>assert_with_condition_and_data_0 - The console.assert() function
+                        <div class="quote-bordered" style="text-align:left;background:black"> 
+                            <pre><code style="color:white;">
+    #[wasm_bindgen(start)]
+    pub fn main() -> Result&lt;(), JsValue> {
+        let x=5u32;
+        let y=10u32;   
+        let z=15u32; 
+        //Assertion failed                                
+        web_sys::console::assert_with_condition_and_data_1(z&lt;y,&JsValue::from("Failed")); 
+        Ok(())
+    }                                
+                            </code></pre>                  
+                            </div>                            
+
+                    <div class="quote-bordered" style="text-align:left;background:gray"> 
+                        <pre><code style="color:white;background: gray">pub fn assert_with_condition_and_data_1(condition: bool, data_1: &JsValue)</code></pre>                  
+                </div>                            
+
+                    </li>
+                    <li>assert_with_condition_and_data_1 - The console.assert() function
+
+
+                    </li>
+                    <li>assert_with_condition_and_data_2 - The console.assert() function
+pub fn assert_with_condition_and_data_2(
+    condition: bool, 
+    data_1: &JsValue, 
+    data_2: &JsValue
+)
+                    </li>
+                    <li>assert_with_condition_and_data_3 - The console.assert() function</li>
+                    <li>assert_with_condition_and_data_4 - The console.assert() function</li>
+                    <li>assert_with_condition_and_data_5 - The console.assert() function</li>
+                    <li>assert_with_condition_and_data_6 - The console.assert() function</li>
+                    <li>assert_with_condition_and_data_7 - The console.assert() function</li>
+                    <li>clear - The console.clear() function</li>
+                    <li>count - The console.count() function</li>
+                    <li>count_reset - The console.countReset() function</li>
+                    <li>count_reset_with_label - The console.countReset() function</li>
+                    <li>count_with_label - The console.count() function</li>
+                    <li>debug - The console.debug() function</li>
+                    <li>debug_0 - The console.debug() function</li>
+                    <li>debug_1 - The console.debug() function</li>
+                    <li>debug_2 - The console.debug() function</li>
+                    <li>debug_3 - The console.debug() function</li>
+                    <li>debug_4 - The console.debug() function</li>
+                    <li>debug_5 - The console.debug() function</li>
+                    <li>debug_6 - The console.debug() function</li>
+                    <li>debug_7 - The console.debug() function</li>
+                    <li>dir - The console.dir() function</li>
+                    <li>dir_0 - The console.dir() function</li>
+                    <li>dir_1 - The console.dir() function</li>
+                    <li>dir_2 - The console.dir() function</li>
+                    <li>dir_3 - The console.dir() function</li>
+                    <li>dir_4 - The console.dir() function</li>
+                    <li>dir_5 - The console.dir() function</li>
+                    <li>dir_6 - The console.dir() function</li>
+                    <li>dir_7 - The console.dir() function</li>
+                    <li>dirxml - The console.dirxml() function</li>
+                    <li>dirxml_0 - The console.dirxml() function</li>
+                    <li>dirxml_1 - The console.dirxml() function</li>
+                    <li>dirxml_2 - The console.dirxml() function</li>
+                    <li>dirxml_3 - The console.dirxml() function</li>
+                    <li>dirxml_4 - The console.dirxml() function</li>
+                    <li>dirxml_5 - The console.dirxml() function</li>
+                    <li>dirxml_6 - The console.dirxml() function</li>
+                    <li>dirxml_7 - The console.dirxml() function</li>
+                    <li>error - The console.error() function</li>
+                    <li>error_0 - The console.error() function</li>
+                    <li>error_1 - The console.error() function</li>
+                    <li>error_2 - The console.error() function</li>
+                    <li>error_3 - The console.error() function</li>
+                    <li>error_4 - The console.error() function</li>
+                    <li>error_5 - The console.error() function</li>
+                    <li>error_6 - The console.error() function</li>
+                    <li>error_7 - The console.error() function</li>
+                    <li>exception - The console.exception() function</li>
+                    <li>exception_0 - The console.exception() function</li>
+                    <li>exception_1 - The console.exception() function</li>
+                    <li>exception_2 - The console.exception() function</li>
+                    <li>exception_3 - The console.exception() function</li>
+                    <li>exception_4 - The console.exception() function</li>
+                    <li>exception_5 - The console.exception() function</li>
+                    <li>exception_6 - The console.exception() function</li>
+                    <li>exception_7 - The console.exception() function</li>
+                    <li>group - The console.group() function</li>
+                    <li>group_0 - The console.group() function</li>
+                    <li>group_1 - The console.group() function</li>
+                    <li>group_2 - The console.group() function</li>
+                    <li>group_3 - The console.group() function</li>
+                    <li>group_4 - The console.group() function</li>
+                    <li>group_5 - The console.group() function</li>
+                    <li>group_6 - The console.group() function</li>
+                    <li>group_7 - The console.group() function</li>
+                    <li>group_collapsed - The console.groupCollapsed() function</li>
+                    <li>group_collapsed_0 - The console.groupCollapsed() function</li>
+                    <li>group_collapsed_1 - The console.groupCollapsed() function</li>
+                    <li>group_collapsed_2 - The console.groupCollapsed() function</li>
+                    <li>group_collapsed_3 - The console.groupCollapsed() function</li>
+                    <li>group_collapsed_4 - The console.groupCollapsed() function</li>
+                    <li>group_collapsed_5 - The console.groupCollapsed() function</li>
+                    <li>group_collapsed_6 - The console.groupCollapsed() function</li>
+                    <li>group_collapsed_7 - The console.groupCollapsed() function</li>
+                    <li>group_end - The console.groupEnd() function</li>
+                    <li>info - The console.info() function</li>
+                    <li>info_0 - The console.info() function</li>
+                    <li>info_1 - The console.info() function</li>
+                    <li>info_2 - The console.info() function</li>
+                    <li>info_3 - The console.info() function</li>
+                    <li>info_4 - The console.info() function</li>
+                    <li>info_5 - The console.info() function</li>
+                    <li>info_6 - The console.info() function</li>
+                    <li>info_7 - The console.info() function</li>
+                    <li>log - The console.log() function
+                        <div class="quote-bordered" style="text-align:left;background:black"> 
+                            <pre><code style="color:white;">
+                            #[wasm_bindgen(start)]
+                            pub fn main() -> Result<(), JsValue> {
+                                let array = js_sys::Array::new();
+                                array.push(&"Hello World".into());
+                                web_sys::console::log(&array);                                                            
+                            }
+                            </code></pre>                  
+                        </div>                        
+                    </li>
+                    <li>log_0 - The console.log() function
+                        <div class="quote-bordered" style="text-align:left;background:black"> 
+                            <pre><code style="color:white;">
+                            #[wasm_bindgen(start)]
+                            pub fn main() -> Result<(), JsValue> {
+                                web_sys::console::log_0();
+                            }
+                            </code></pre>                  
+                        </div>                        
+                    </li>
+                    <li>log_1 - The console.log() function
+                        <div class="quote-bordered" style="text-align:left;background:black"> 
+                            <pre><code style="color:white;">
+                            #[wasm_bindgen(start)]
+                            pub fn main() -> Result<(), JsValue> {
+                                web_sys::console::log_1(&"Hello World".into());
+                            }
+                            </code></pre>                  
+                        </div>                        
+                    </li>
+                    <li>log_2 - The console.log() function
+                        <div class="quote-bordered" style="text-align:left;background:black"> 
+                            <pre><code style="color:white;">
+                            #[wasm_bindgen(start)]
+                            pub fn main() -> Result<(), JsValue> {
+                                web_sys::console::log_2(&"Hello %s".into(),&"John".into());
+                            }
+                            </code></pre>                  
+                        </div>                        
+                    </li>
+                    <li>log_3 - The console.log() function</li>
+                    <li>log_4 - The console.log() function</li>
+                    <li>log_5 - The console.log() function</li>
+                    <li>log_6 - The console.log() function</li>
+                    <li>log_7 - The console.log() function</li>
+                    <li>profile - The console.profile() function</li>
+                    <li>profile_0 - The console.profile() function</li>
+                    <li>profile_1 - The console.profile() function</li>
+                    <li>profile_2 - The console.profile() function</li>
+                    <li>profile_3 - The console.profile() function</li>
+                    <li>profile_4 - The console.profile() function</li>
+                    <li>profile_5 - The console.profile() function</li>
+                    <li>profile_6 - The console.profile() function</li>
+                    <li>profile_7 - The console.profile() function</li>
+                    <li>profile_end - The console.profileEnd() function</li>
+                    <li>profile_end_0 - The console.profileEnd() function</li>
+                    <li>profile_end_1 - The console.profileEnd() function</li>
+                    <li>profile_end_2 - The console.profileEnd() function</li>
+                    <li>profile_end_3 - The console.profileEnd() function</li>
+                    <li>profile_end_4 - The console.profileEnd() function</li>
+                    <li>profile_end_5 - The console.profileEnd() function</li>
+                    <li>profile_end_6 - The console.profileEnd() function</li>
+                    <li>profile_end_7 - The console.profileEnd() function</li>
+                    <li>table - The console.table() function</li>
+                    <li>table_0 - The console.table() function</li>
+                    <li>table_1 - The console.table() function</li>
+                    <li>table_2 - The console.table() function</li>
+                    <li>table_3 - The console.table() function</li>
+                    <li>table_4 - The console.table() function</li>
+                    <li>table_5 - The console.table() function</li>
+                    <li>table_6 - The console.table() function</li>
+                    <li>table_7 - The console.table() function</li>
+                    <li>time - The console.time() function</li>
+                    <li>time_end - The console.timeEnd() function</li>
+                    <li>time_end_with_label - The console.timeEnd() function</li>
+                    <li>time_log - The console.timeLog() function</li>
+                    <li>time_log_with_label_and_data - The console.timeLog() function</li>
+                    <li>time_log_with_label_and_data_0 - The console.timeLog() function</li>
+                    <li>time_log_with_label_and_data_1 - The console.timeLog() function</li>
+                    <li>time_log_with_label_and_data_2 - The console.timeLog() function</li>
+                    <li>time_log_with_label_and_data_3 - The console.timeLog() function</li>
+                    <li>time_log_with_label_and_data_4 - The console.timeLog() function</li>
+                    <li>time_log_with_label_and_data_5 - The console.timeLog() function</li>
+                    <li>time_log_with_label_and_data_6 - The console.timeLog() function</li>
+                    <li>time_log_with_label_and_data_7 - The console.timeLog() function</li>
+                    <li>time_stamp - The console.timeStamp() function</li>
+                    <li>time_stamp_with_data - The console.timeStamp() function</li>
+                    <li>time_with_label - The console.time() function</li>
+                    <li>trace - The console.trace() function</li>
+                    <li>trace_0 - The console.trace() function</li>
+                    <li>trace_1 - The console.trace() function</li>
+                    <li>trace_2 - The console.trace() function</li>
+                    <li>trace_3 - The console.trace() function</li>
+                    <li>trace_4 - The console.trace() function</li>
+                    <li>trace_5 - The console.trace() function</li>
+                    <li>trace_6 - The console.trace() function</li>
+                    <li>trace_7 - The console.trace() function</li>
+                    <li>warn - The console.warn() function</li>
+                    <li>warn_0 - The console.warn() function</li>
+                    <li>warn_1 - The console.warn() function</li>
+                    <li>warn_2 - The console.warn() function</li>
+                    <li>warn_3 - The console.warn() function</li>
+                    <li>warn_4 - The console.warn() function</li>
+                    <li>warn_5 - The console.warn() function</li>
+                    <li>warn_6 - The console.warn() function</li>
+                    <li>warn_7 - The console.warn() function</li>
+                </ul>
+
+
+             </div>
+      
+
+
+	    
+            <div class="col-lg-4 section-divided__aside section-divided__aside-left">
+
+              <section class="section-md">
+                <h5>rustwasm</h5>
+                <ul class="list-linked">
+                  <li><a href="../rust_webassembly_hello_world.html">Rust WebAssembly Hello World</a></li>
+                  <li><a href="../rustwasm/wasm-bindgen.html">wasm-bindgen</a></li>
+                  <li><a href="../rustwasm/web_sys.html">web_sys</a></li>
+                  <li><a href="../rustwasm/web_sys_console.html">web_sys console</a></li>
+                </ul>
+              </section>
+  
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider-->
+      <div class="container">
+        <div class="divider"></div>
+      </div>
+
+      <section class="pre-footer-corporate" style="display:none">
+        <div class="container">
+          <div class="row justify-content-sm-center justify-content-lg-start row-30 row-md-60">
+
+            <ul class="list-inline-xxs">
+              <li><a class="icon icon-xxs icon-primary fa fa-twitter" href="https://connectcode.twitter.com"></a></li>
+            </ul>
+
+            <div class="col-sm-10 col-md-6 col-lg-3 col-xl-3">
+            </div>
+            <div class="col-sm-10 col-md-6 col-lg-5 col-xl-3">
+            </div>
+            <div class="col-sm-10 col-md-6 col-lg-4 col-xl-3">
+              <ul class="list-xs">
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <footer class="footer-corporate">
+        <div class="container">
+          <div class="footer-corporate__inner">
+            <p class="rights">Copyright <span>https://www.webassemblyMan.com</span><span>&nbsp;</span>2018 - <span id="copyright-year"></span>.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="../js/core.min.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>

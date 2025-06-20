@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151192680-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-151192680-1');
+    </script>
+    <!-- Site Title-->
+    <title>Blazor Line Chart</title>
+    <meta content="Blazor Line Chart"
+			name="description">
+    <meta content="blazor line chart, webassembly blazor line chart"
+			name="keywords">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Libre+Franklin:200,300,500,600,300italic">
+    <!--
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    -->
+    <link rel=“preload” href=“../fonts//fontawesome-webfont.woff2?v=4.7.0” as=“font”>
+    <link rel="preload" href="../css/bootstrap.min.css" as="style">
+    <link rel="preload" href="../css/style.css" as="style">
+    <link rel="preload" href="../js/core.min.js" as="script">
+    <link rel="preload" href="../js/script.js" as="script">
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css">
+		<!--[if lt IE 10]>
+    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="../images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <script src="../js/html5shiv.min.js"></script>
+		<![endif]-->
+  </head>
+  <body>
+    <!-- Page -->
+    <div class="page">
+      <div id="page-loader">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+      </div>
+      <!-- Page header-->
+            <header class="page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-device-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-stick-up-clone="false" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true" data-lg-stick-up-offset="69px" data-xl-stick-up-offset="1px" data-xxl-stick-up-offset="1px">
+            <div class="rd-navbar-inner">
+              <!-- RD Navbar Panel -->
+              <div class="rd-navbar-panel">
+                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                <!-- RD Navbar Brand-->
+                <div><a href="../index.html" style="color:black;margin-top:2.5px;font-size:22px;">WEBASSEMBLYMAN</a></div>
+              </div>
+              <!-- RD Navbar Nav-->
+              <div class="rd-navbar-nav-wrap">
+
+<ul class="rd-navbar-nav">
+  <li><a href="../index.html">Home</a></li>
+    <li class="active"><a href="#">WebAssembly</a>
+      <ul class="rd-navbar-dropdown">
+          <li><a href="../webcomponents.html">WebAssembly Web Components</a></li>
+          <li><a href="../wat_webassembly_text_format.html">WebAssembly Text Format</a></li>
+            <li><a href="../webassembly_wat_hello_world.html">WebAssembly WAT Hello World</a></li>
+            <li><a href="../webassembly_data_types.html">WebAssembly Data Types</a></li>
+            <li><a href="../webassembly_control_flow.html">WebAssembly Control Flow</a></li>
+            <li><a href="../webassembly_front_end_web_development.html">WebAssembly Front-End Development</a></li>
+          </ul>
+    </li>
+
+    <li class="active"><a href="#">Blazor</a>
+      <ul class="rd-navbar-dropdown">
+        <li><a href="../blazorhelloworld.html">Blazor Hello World</a></li>
+        <li><a href="../blazor/blazorcomponents.html">Blazor Components</a></li>
+        <li><a href="../blazor/blazoradmindashboard.html">Blazor Dashboard</a></li>
+        <li><a href="../blazor/blazorcharts.html">Blazor Charts</a></li>
+        <li><a href="../blazor/blazordonutchart.html">Blazor Donut Chart</a></li>
+        <li><a href="../blazor/blazorpiechart.html">Blazor Pie Chart</a></li>
+        <li><a href="../blazor/blazorbarchart.html">Blazor Bar Chart</a></li>
+        <li><a href="../blazor/blazorlinechart.html">Blazor Line Chart</a></li>
+            <li><a href="../blazor/blazordatabinding.html">Blazor Data Binding</a></li>
+            <li><a href="../blazor/blazorevents.html">Blazor Events</a></li>
+            <li><a href="../blazor/blazorcascadingvaluesparameters.html">Blazor Cascading Values & Parameters</a></li>
+            <li><a href="../blazor/blazorbuildrendertree.html">Blazor BuildRenderTree</a></li>
+            <li><a href="../blazor/blazorforloop.html">for loop</a></li>
+            <li><a href="../blazor/blazorforeachloop.html">foreach loop</a></li>
+            <li><a href="../blazor/blazorwhiledowhileloop.html">while loop</a></li>
+            <li><a href="../blazor/blazorswitch.html">switch statement</a></li>
+            <li><a href="../blazor/blazorifelseif.html">if, else and else if statement</a></li>    
+              </ul>
+    </li>
+    
+  <li class="active"><a href="#">Rust WebAssembly</a>
+  <ul class="rd-navbar-dropdown">
+    <li><a href="../rust_webassembly_hello_world.html">Rust WebAssembly Hello World</a></li>
+    <li><a href="../rustwasm/frontendframeworksrustwebassembly.html">Front End Frameworks</a></li> 
+    <li><a href="../rustwasm/how_to_manipulate_the_dom_in_rust_webassembly.html">DOM manipulation</a></li> 
+    <li><a href="../rustwasm/how_to_create_and_access_html_objects_in_rust_webassembly.html">HTML Objects</a></li> 
+    <li><a href="../rustwasm/how_to_add_an_onclick_event_to_a_button_in_rust_webassembly.html">Button onclick</a></li> 
+    <li><a href="../rustwasm/how_to_add_mouse_events_in_rust_webassembly.html">Mouse events</a></li> 
+    <li><a href="../rustwasm/how_to_add_keyboard_events_in_rust_webassembly.html">Keyboard events</a></li>     
+    <li><a href="../rustwasm/how_to_log_to_the_console_in_rust_webassembly.html">Console log</a></li> 
+    <li><a href="../rustwasm/how_to_add_svg_in_rust_webassembly.html">SVG in Rust WebAssembly</a></li> 
+    <li><a href="../rustwasm/rustwasm_svg_donut_chart_webcomponent.html">SVG Donut Chart in Rust WebAssembly</a></li> 
+
+    
+
+  </ul>
+
+  </li>
+  <li class="active"><a href="#">rustwasm API</a>
+    <ul class="rd-navbar-dropdown">
+      <li><a href="../rustwasm/wasm-bindgen.html">wasm-bindgen</a></li>
+      <li><a href="../rustwasm/wasm_bindgen_jsvalue.html">wasm_bindgen::JsValue</a></li>    
+      <li><a href="../rustwasm/web-sys.html">web-sys</a></li>
+      <li><a href="../rustwasm/web_sys_console.html">web_sys::console</a></li>
+      <li><a href="../rustwasm/web_sys_document.html">web_sys::Document</a></li>
+      <li><a href="../rustwasm/web_sys_htmlcanvaselement.html">web_sys::HtmlCanvasElement</a></li>
+      <li><a href="../rustwasm/web_sys_canvasrenderingcontext2d.html">web_sys::CanvasRenderingContext2d</a></li>
+      <li><a href="../rustwasm/web_sys_fontface.html">web_sys::FontFace</a></li>      
+      <li><a href="../rustwasm/web_sys_svgelement.html">web_sys::SvgElement</a></li>
+      <li><a href="../rustwasm/js-sys.html">js-sys</a></li>
+      <li><a href="../rustwasm/js_sys_array.html">js_sys::Array</a></li>    
+      <li><a href="../rustwasm/gloo_events_eventlistener.html">gloo_events::EventListener</a></li>
+
+      <li><a href="../rustwasm/wasm-bindgen-futures.html">wasm-bindgen-futures</a></li>
+      <li><a href="../rustwasm/wasm_bindgen_futures_jsfuture.html">wasm-bindgen-futures::JsFuture</a></li>
+  
+    </ul>
+    </li>
+  
+</ul>
+
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+
+            <section class="breadcrumbs-custom">
+        <div class="container">
+          <div class="breadcrumbs-custom__inner">
+            <p class="breadcrumbs-custom__title">Man(ual) page for WebAssembly</p>
+            <ul class="breadcrumbs-custom__path">
+              <li><a href="../index.html">Home</a></li>
+              <li class="active">Blazor</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="bg-default section-lg">
+        <div class="container">
+          <div class="row row-60 justify-content-sm-center">
+            <div class="col-lg-8 section-divided__main">
+
+
+	      <h3>Blazor Line Chart</h3>
+<p>
+    <img width="40%" height=40%" src=images/blazorlinechart.png />
+</p>
+<h4>Usage</h4>
+<p>
+  &lt;LineChart 
+  InputData="[30,70,42,50,3,55,35,22 ],[40,50,32,70,55,15,15,12],[0,10,10,10,10,20,70,70]"
+  InputLabels="App Store,Website,Partners">
+  &lt;/LineChart>
+</p>
+<p>
+Please see WebAssemblyMan <a href=blazorcharts.html>Blazor Charts</a> project on how to include this donut chart in your Blazor project.
+</p>
+
+<h5>Source Code</h5>
+<p>
+<ul class="list-marked">
+ <li>GitHub - <a href=https://github.com/Misfits-Rebels-Outcasts/Blazor-Charts/tree/master/DonutChart rel="nofollow">Blazor Donut Chart</a></li>
+</ul>
+</p>
+
+<div class="quote-bordered" style="text-align:left;background:black"> 
+    <pre><code style="color:white;">
+      protected override void BuildRenderTree(RenderTreeBuilder builder)
+      {
+          var seq = 0;
+          builder.OpenElement(seq, "figure");
+          builder.AddAttribute(++seq, "class", "line-chart");
+          builder.OpenElement(++seq, "div");
+          builder.AddAttribute(++seq, "class", "main");
+
+          System.Diagnostics.Debug.WriteLine("ID"+InputData);
+          
+          string[] inputDataArrX = InputData.Split(new char[] { '[', ']' }, StringSplitOptions.RemoveEmptyEntries);
+          string[] inputLabelsArr = InputLabels.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+
+          int numLines = 0;
+          System.Diagnostics.Debug.WriteLine("Start");
+          foreach (string inputLine in inputDataArrX)
+          {
+              if (inputLine.IndexOfAny(new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' }) >= 0)
+              {
+                  numLines++;
+              }
+          }
+          System.Diagnostics.Debug.WriteLine("End");
+          string[] inputDataArr = new string[numLines];
+          int lineCounter = 0;
+          foreach (string inputLine in inputDataArrX)
+          {
+              if (inputLine.IndexOfAny(new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' }) >= 0)
+              {
+                  inputDataArr[lineCounter++] = inputLine;
+                  System.Diagnostics.Debug.WriteLine("IL:" + inputLine);
+              }
+          }
+
+          string[] colors = { "#ce4b99", "#27A844", "#377bbc" };
+          string[] labels = { "App Store", "Website", "Partners" };            
+
+          double boundHeight = 150.0;
+          double boundWidth = 150.0;
+
+          SVG svg = new SVG() { { "width", "100%" }, { "height", "100%" }, { "viewBox", "0 0 150 150" } };
+          Rectangle rect = new Rectangle() { { "class", "background-rect" }};
+          svg.AddItems(rect);
+
+
+          int numHorizontalLines = 10;
+          int numVerticalLines = 10;
+          double verticalStartSpace = 25.0;
+          double horizontalStartSpace = 25.0;
+          double verticalEndSpace = 25.0;
+          double horizontalEndSpace = 25.0;
+          double gridYUnits = 10;
+          double gridXUnits = 10;
+
+          double verticalSpace = (boundHeight- verticalStartSpace-verticalEndSpace) / (numHorizontalLines);
+          double horizontalSpace = (boundWidth - horizontalStartSpace-horizontalEndSpace) / (numVerticalLines);
+
+          double totalGridWidth = ((double)(numVerticalLines-1)) * horizontalSpace;
+          double totalGridHeight = ((double)(numHorizontalLines-1)) * verticalSpace;
+          System.Diagnostics.Debug.WriteLine("TotalGridHeight:" + totalGridHeight+":"+ verticalSpace);
+
+          //Horizontal Lines
+          double y = verticalStartSpace;
+          double startGridY = 0;
+          for (int counter=0;counter&lt;=numHorizontalLines;counter++)
+          {
+
+              Path path = new Path() { { "class", "horizontal-grid-lines" }, { "d", "M "+horizontalStartSpace.ToString()+" "+(boundHeight - y).ToString() + " L "+(boundWidth-horizontalEndSpace).ToString()+" "+(boundHeight - y).ToString() } };
+              Text label = new Text() { { "class", "y-axis-labels" }, { "x", (horizontalStartSpace-2).ToString() }, { "y", (boundHeight - y).ToString() }, { "content", (startGridY).ToString() } };
+              svg.AddItems(path,label);
+              System.Diagnostics.Debug.WriteLine("Y:" + y);
+
+              y = y + verticalSpace;
+              startGridY = startGridY + gridYUnits;
+          }
+
+          //Chart Line
+          double gridx=0, gridy = 0;
+          gridx = horizontalStartSpace;
+          gridy = boundHeight - verticalStartSpace;
+          int colorcounter = 0;
+          foreach (string iData in inputDataArr)
+          {
+              string chartLine = "";
+              double gridValueX = 0;
+              double gridValueY = 0;
+              bool firstTime = true;
+
+              string[] inputLineArr = iData.Split(',');
+              int[] intAry=new int[inputLineArr.Length];
+              for (int i = 0; i &lt; inputLineArr.Length; i++)
+                  intAry[i] = int.Parse(inputLineArr[i]);
+
+              foreach (int i in intAry)
+              {
+                  if (firstTime)
+                  {
+                      chartLine = chartLine + "M ";
+                      firstTime = false;
+                      gridValueX = horizontalStartSpace;
+                      gridValueY = verticalStartSpace;
+                      double gridValue = ((double)i) * verticalSpace / gridYUnits;
+                      gridValueY = boundHeight - (gridValueY + gridValue);
+                      chartLine = chartLine + gridValueX.ToString() + " " + gridValueY.ToString();
+                  }
+                  else
+                  {
+                      chartLine = chartLine + " L ";
+                      gridValueX = gridValueX + horizontalSpace;
+                      gridValueY = verticalStartSpace;
+                      double gridValue = ((double)i) * verticalSpace / gridYUnits;
+                      gridValueY = boundHeight - (gridValueY + gridValue);
+                      chartLine = chartLine + gridValueX.ToString() + " " + gridValueY.ToString();
+                  }
+              }
+              Path linepath = new Path() { { "class", "line-"+(colorcounter+1).ToString() },{ "d", chartLine } };
+              colorcounter++;
+              svg.AddItems(linepath);
+
+          }
+
+          //Vertical Lines            
+          double x = horizontalStartSpace;
+          double startGridX = 0;
+          for (int counter = 0; counter &lt;= numVerticalLines; counter++)
+          {
+
+              Path path = new Path() { { "class", "vertical-grid-lines" }, { "d", "M " + x.ToString() +" "+ (boundHeight-verticalStartSpace).ToString() + " L "+ x.ToString() + " " +(verticalEndSpace).ToString() } };
+              Text label = new Text() { { "class", "x-axis-labels" }, {"x",x.ToString() }, { "y", (boundHeight - verticalStartSpace + 5).ToString() }, { "content", (startGridX).ToString() } };
+              startGridX = startGridX + gridXUnits;
+
+              svg.AddItems(path,label);
+              x = x + horizontalSpace;
+          }
+          
+          BlazorRenderer blazorRenderer = new BlazorRenderer();
+          blazorRenderer.Draw(seq, builder, svg);
+          
+          builder.OpenElement(++seq, "figcaption");
+          builder.AddAttribute(++seq, "class", "key");
+          builder.OpenElement(++seq, "ul");
+          builder.AddAttribute(++seq, "class", "key-list");
+
+          colorcounter = 0;
+          foreach (string iData in inputDataArr)
+          {
+              builder.OpenElement(++seq, "li");
+              builder.OpenElement(++seq, "span");
+              builder.AddAttribute(++seq, "class", "legend-"+(colorcounter+1).ToString());
+
+              builder.CloseElement();
+
+              string label="";
+              if (colorcounter&lt;inputLabelsArr.Length)
+                  label=inputLabelsArr[colorcounter];
+
+              builder.AddContent(++seq, label);
+              builder.CloseElement();
+              colorcounter++;
+          }
+
+          builder.CloseElement();
+          builder.CloseElement();
+          
+
+          builder.CloseElement();
+          builder.CloseElement();
+      }
+
+</code></pre>                  
+</div>                        
+<p>
+    The CSS Style Sheet values used by the SVG line chart. 
+    </p>
+    <div class="quote-bordered" style="text-align:left;background:black"> 
+        <pre><code style="color:white;">
+
+          .line-chart{
+          }
+          
+              .line-chart div {
+                  background:white;
+                  border: white;
+                  border-style: solid;
+                  border-width: 1px;
+              }
+          
+              .line-chart div svg{
+              }
+          
+              .line-chart div svg .background-rect{
+                  width:100%;
+                  height:100%;
+                  fill:white;
+                  stroke:lightgray;
+                  stroke-width:0.5;            
+              }
+          
+              .line-chart div svg .horizontal-grid-lines{
+                  fill:none;
+                  stroke:gray;
+                  stroke-width:0.2;
+              }
+          
+              .line-chart div svg .y-axis-labels{
+                  font-size:4px;
+                  text-anchor:end;
+              }
+          
+              .line-chart div svg .vertical-grid-lines{        
+                  fill:none;
+                  stroke:gray;
+                  stroke-width:0.2;
+              }
+          
+              .line-chart div svg .x-axis-labels{
+                  font-size:4px;
+                  text-anchor:middle;
+              }
+          
+              .line-chart div svg .line-1{
+                  fill:none;
+                  stroke:#ce4b99;
+                  stroke-width: 1.0;
+              }
+              .line-chart div svg .line-2{
+                  fill:none;
+                  stroke:#27A844;
+                  stroke-width: 1.0;
+              }
+              .line-chart div svg .line-3{
+                  fill:none;
+                  stroke:#377bbc;
+                  stroke-width: 1.0;
+              }
+              .line-chart div svg .line-4{
+                  fill:none;
+                  stroke:#fe2712;
+                  stroke-width: 1.0;
+              }
+              .line-chart div svg .line-5{
+                  fill:none;
+                  stroke:#fc600a;
+                  stroke-width: 1.0;
+              }
+              .line-chart div svg .line-6{
+                  fill:none;
+                  stroke:#fb9902;
+                  stroke-width: 1.0;
+              }
+              .line-chart div svg .line-7{
+                  fill:none;
+                  stroke:#fccc1a;
+                  stroke-width: 1.0;
+              }
+              .line-chart div svg .line-8{
+                  fill:none;
+                  stroke:#fefe33;
+                  stroke-width: 1.0;
+              }
+              .line-chart div svg .line-9{
+                  fill:none;
+                  stroke:#b2d732;
+                  stroke-width: 1.0;
+              }
+              .line-chart div svg .line-10{
+                  fill:none;
+                  stroke:#66b032;
+                  stroke-width: 1.0;
+              }
+              .line-chart div .key{
+                  margin: 20px;
+              }
+          
+              .line-chart div .key [class*="legend-"] {
+                  margin: 5px;
+                  margin-right: 10px;
+                  display: inline-block;
+                  vertical-align: middle;
+                  width: 20px;
+                  height: 20px;
+                  /*
+                  width: 26px;
+                  height: 26px;
+                  */
+                  border-radius: 50%;
+              }
+          
+              .line-chart div figcaption .key-list {
+                  margin: 0;
+                  padding: 0;
+                  list-style: none;
+                  font-size: 0.9em;
+              }
+          
+              .line-chart div figcaption .key-list li {
+                  margin: 0 0 8px;
+                  padding: 0;
+          
+              }
+          
+              .line-chart div figcaption ul .legend-1 {
+                  background:#ce4b99;
+                  transform: translateY(-0.1em);
+              }
+              .line-chart div figcaption ul .legend-2 {
+                  background:#27A844;
+                  transform: translateY(-0.1em);
+              }
+              .line-chart div figcaption ul .legend-3 {
+                  background:#377bbc;
+                  transform: translateY(-0.1em);
+              }
+              .line-chart div figcaption ul .legend-4 {
+                  background:#fe2712;
+                  transform: translateY(-0.1em);
+              }
+              .line-chart div figcaption ul .legend-5 {
+                  background:#fc600a;
+                  transform: translateY(-0.1em);
+              }
+              .line-chart div figcaption ul .legend-6 {
+                  background:#fb9902;
+                  transform: translateY(-0.1em);
+              }
+              .line-chart div figcaption ul .legend-7 {
+                  background:#fccc1a;
+                  transform: translateY(-0.1em);
+              }
+              .line-chart div figcaption ul .legend-8 {
+                  background:#fefe33;
+                  transform: translateY(-0.1em);
+              }
+              .line-chart div figcaption ul .legend-9 {
+                  background:#b2d732;
+                  transform: translateY(-0.1em);
+              }
+              .line-chart div figcaption ul .legend-10 {
+                  background:#66b032;
+                  transform: translateY(-0.1em);
+              }
+                  
+        </code></pre>                  
+    </div>  
+    <p></p> 
+    
+             </div>
+      
+
+
+	    
+            <div class="col-lg-4 section-divided__aside section-divided__aside-left">
+
+              <section class="section-md">
+                <h5>WebAssembly</h5>
+                <ul class="list-linked">
+                    <li><a href="../webcomponents.html">WebAssembly Web Components</a></li>
+                    <li><a href="../wat_webassembly_text_format.html">WebAssembly Text Format</a></li>
+                  <li><a href="../webassembly_wat_hello_world.html">WebAssembly WAT Hello World</a></li>
+                  <li><a href="../webassembly_data_types.html">WebAssembly Data Types</a></li>
+                  <li><a href="../webassembly_control_flow.html">WebAssembly Control Flow</a></li>
+                  <li><a href="../webassembly_front_end_web_development.html">WebAssembly Front-End Development</a></li>
+                </ul>
+              </section>
+
+              <section class="section-md">
+                <h5>Blazor Topics</h5>
+                <ul class="list-linked">
+                  <li><a href="../blazorhelloworld.html">Blazor Hello World</a></li>
+                  <li><a href="../blazor/blazorcomponents.html">Blazor Components</a></li>
+                  <li><a href="../blazor/blazoradmindashboard.html">Blazor Dashboard</a></li>
+                  <li><a href="../blazor/blazorcharts.html">Blazor Charts</a></li>
+                  <li><a href="../blazor/blazordonutchart.html">Blazor Donut Chart</a></li>          
+                  <li><a href="../blazor/blazorpiechart.html">Blazor Pie Chart</a></li>      
+                  <li><a href="../blazor/blazorbarchart.html">Blazor Bar Chart</a></li>    
+                  <li><a href="../blazor/blazorlinechart.html">Blazor Line Chart</a></li>    
+                  <li><a href="../blazor/blazordatabinding.html">Blazor Data Binding</a></li>
+                  <li><a href="../blazor/blazorevents.html">Blazor Events</a></li>
+                  <li><a href="../blazor/blazorcascadingvaluesparameters.html">Blazor Cascading Values & Parameters</a></li>
+                  <li><a href="../blazor/blazorbuildrendertree.html">Blazor BuildRenderTree</a></li>
+                  <li>Injection (coming soon)</li>
+                  <li>Layout (coming soon)</li>
+                </ul>
+              </section>
+            <section class="section-md">
+                <h5>Blazor Syntax</h5>
+                <ul class="list-linked">
+                  <li><a href="../blazor/blazorforloop.html">for loop</a></li>
+                  <li><a href="../blazor/blazorforeachloop.html">foreach loop</a></li>
+                  <li><a href="../blazor/blazorwhiledowhileloop.html">while loop</a></li>
+                  <li><a href="../blazor/blazorswitch.html">switch statement</a></li>
+                  <li><a href="../blazor/blazorifelseif.html">if, else and else if statement</a></li>
+                </ul>
+              </section>
+  
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider-->
+      <div class="container">
+        <div class="divider"></div>
+      </div>
+
+      <section class="pre-footer-corporate" style="display:none">
+        <div class="container">
+          <div class="row justify-content-sm-center justify-content-lg-start row-30 row-md-60">
+
+            <ul class="list-inline-xxs">
+              <li><a class="icon icon-xxs icon-primary fa fa-twitter" href="https://connectcode.twitter.com"></a></li>
+            </ul>
+
+            <div class="col-sm-10 col-md-6 col-lg-3 col-xl-3">
+            </div>
+            <div class="col-sm-10 col-md-6 col-lg-5 col-xl-3">
+            </div>
+            <div class="col-sm-10 col-md-6 col-lg-4 col-xl-3">
+              <ul class="list-xs">
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <footer class="footer-corporate">
+        <div class="container">
+          <div class="footer-corporate__inner">
+            <p class="rights">Copyright <span>https://www.webassemblyMan.com</span><span>&nbsp;</span>2018 - <span id="copyright-year"></span>.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="../js/core.min.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>

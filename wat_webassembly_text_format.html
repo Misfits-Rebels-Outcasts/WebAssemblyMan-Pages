@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151192680-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+    
+          gtag('config', 'UA-151192680-1');
+        </script>
+    
+    <!-- Site Title-->
+    <title>WAT - WebAssembly Text Format.</title>
+    <meta content="WebAssembly Text Format - WAT."
+			name="description">
+    <meta content="WAT, WebAssembly Text Format"
+			name="keywords">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Libre+Franklin:200,300,500,600,300italic">
+    <!--
+    <link rel="stylesheet" href="css/bootstrap.css">
+    -->
+
+    <link rel=“preload” href=“fonts//fontawesome-webfont.woff2?v=4.7.0” as=“font”>
+    <link rel=“preload” href=“fonts//fontawesome-webfont.woff?v=4.7.0” as=“font”>
+    <link rel=“preload” href=“fonts//fontawesome-webfont.eot?v=4.7.0” as=“font”>
+    <link rel="preload" href="css/bootstrap.min.css" as="style">
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/core.min.js" as="script">
+    <link rel="preload" href="js/script.js" as="script">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css">
+		<!--[if lt IE 10]>
+    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <script src="js/html5shiv.min.js"></script>
+		<![endif]-->
+  </head>
+  <body>
+    <!-- Page -->
+    <div class="page">
+      <div id="page-loader">
+        <div class="cssload-container">
+          <div class="cssload-speeding-wheel"></div>
+        </div>
+      </div>
+      <!-- Page header-->
+            <header class="page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-device-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-stick-up-clone="false" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true" data-lg-stick-up-offset="69px" data-xl-stick-up-offset="1px" data-xxl-stick-up-offset="1px">
+            <div class="rd-navbar-inner">
+              <!-- RD Navbar Panel -->
+              <div class="rd-navbar-panel">
+                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                <!-- RD Navbar Brand-->
+                <div><a href="index.html" style="color:black;margin-top:2.5px;font-size:22px;">WEBASSEMBLYMAN</a></div>
+              </div>
+              <!-- RD Navbar Nav-->
+              <div class="rd-navbar-nav-wrap">
+
+<ul class="rd-navbar-nav">
+  <li><a href="index.html">Home</a></li>
+
+    <li class="active"><a href="#">WebAssembly</a>
+      <ul class="rd-navbar-dropdown">
+          <li><a href="webcomponents.html">WebAssembly Web Components</a></li>
+            <li><a href="wat_webassembly_text_format.html">WebAssembly Text Format</a></li>
+            <li><a href="webassembly_wat_hello_world.html">WebAssembly WAT Hello World</a></li>
+            <li><a href="webassembly_data_types.html">WebAssembly Data Types</a></li>
+            <li><a href="webassembly_control_flow.html">WebAssembly Control Flow</a></li>
+            <li><a href="webassembly_front_end_web_development.html">WebAssembly Front-End Development</a></li>
+          </ul>
+    </li>
+
+    <li class="active"><a href="#">Blazor</a>
+      <ul class="rd-navbar-dropdown">
+        <li><a href="blazorhelloworld.html">Blazor Hello World</a></li>
+            <li><a href="blazor/blazorcomponents.html">Blazor Components</a></li>
+            <li><a href="blazor/blazoradmindashboard.html">Blazor Dashboard</a></li>
+            <li><a href="blazor/blazorcharts.html">Blazor Charts</a></li>
+            <li><a href="blazor/blazordonutchart.html">Blazor Donut Chart</a></li>
+            <li><a href="blazor/blazorpiechart.html">Blazor Pie Chart</a></li>
+            <li><a href="blazor/blazorbarchart.html">Blazor Bar Chart</a></li>
+            <li><a href="blazor/blazorlinechart.html">Blazor Line Chart</a></li>
+            <li><a href="blazor/blazordatabinding.html">Blazor Data Binding</a></li>
+            <li><a href="blazor/blazorevents.html">Blazor Events</a></li>
+            <li><a href="blazor/blazorcascadingvaluesparameters.html">Blazor Cascading Values & Parameters</a></li>
+            <li><a href="blazor/blazorbuildrendertree.html">Blazor BuildRenderTree</a></li>
+            <li><a href="blazor/blazorforloop.html">for loop</a></li>
+            <li><a href="blazor/blazorforeachloop.html">foreach loop</a></li>
+            <li><a href="blazor/blazorwhiledowhileloop.html">while loop</a></li>
+            <li><a href="blazor/blazorswitch.html">switch statement</a></li>
+            <li><a href="blazor/blazorifelseif.html">if, else and else if statement</a></li>    
+              </ul>
+    </li>
+    
+  <li class="active"><a href="#">Rust WebAssembly</a>
+  <ul class="rd-navbar-dropdown">
+    <li><a href="rust_webassembly_hello_world.html">Rust WebAssembly Hello World</a></li>
+    <li><a href="rustwasm/frontendframeworksrustwebassembly.html">Rust WebAssembly Front End Frameworks</a></li>
+    <li><a href="rustwasm/how_to_manipulate_the_dom_in_rust_webassembly.html">DOM manipulation</a></li>
+    <li><a href="rustwasm/how_to_create_and_access_html_objects_in_rust_webassembly.html">HTML Objects</a></li>  
+    <li><a href="rustwasm/how_to_add_an_onclick_event_to_a_button_in_rust_webassembly.html">Button onclick</a></li> 
+    <li><a href="rustwasm/how_to_add_mouse_events_in_rust_webassembly.html">Mouse events</a></li> 
+    <li><a href="rustwasm/how_to_add_keyboard_events_in_rust_webassembly.html">Keyboard events</a></li>   
+    <li><a href="rustwasm/how_to_log_to_the_console_in_rust_webassembly.html">Console log</a></li> 
+    <li><a href="rustwasm/how_to_add_svg_in_rust_webassembly.html">SVG in Rust WebAssembly</a></li> 
+    <li><a href="rustwasm/rustwasm_svg_donut_chart_webcomponent.html">SVG Donut Chart in Rust WebAssembly</a></li> 
+
+  </ul>
+</li>
+
+<li class="active"><a href="#">rustwasm API</a>
+  <ul class="rd-navbar-dropdown">
+    <li><a href="rustwasm/wasm-bindgen.html">wasm-bindgen</a></li>
+    <li><a href="rustwasm/wasm_bindgen_jsvalue.html">wasm_bindgen::JsValue</a></li>    
+    <li><a href="rustwasm/web-sys.html">web-sys</a></li>
+    <li><a href="rustwasm/web_sys_console.html">web_sys::console</a></li>
+    <li><a href="rustwasm/web_sys_document.html">web_sys::Document</a></li>
+    <li><a href="rustwasm/web_sys_htmlcanvaselement.html">web_sys::HtmlCanvasElement</a></li>
+    <li><a href="rustwasm/web_sys_canvasrenderingcontext2d.html">web_sys::CanvasRenderingContext2d</a></li>
+    <li><a href="rustwasm/web_sys_fontface.html">web_sys::FontFace</a></li>      
+    <li><a href="rustwasm/web_sys_svgelement.html">web_sys::SvgElement</a></li>
+    <li><a href="rustwasm/js-sys.html">js-sys</a></li>
+    <li><a href="rustwasm/js_sys_array.html">js_sys::Array</a></li>
+    <li><a href="rustwasm/gloo_events_eventlistener.html">gloo_events::EventListener</a></li>
+    <li><a href="rustwasm/wasm-bindgen-futures.html">wasm-bindgen-futures</a></li>
+    <li><a href="rustwasm/wasm_bindgen_futures_jsfuture.html">wasm-bindgen-futures::JsFuture</a></li>
+
+  </ul>
+</li>
+
+</ul>
+
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+
+            <section class="breadcrumbs-custom">
+        <div class="container">
+          <div class="breadcrumbs-custom__inner">
+            <p class="breadcrumbs-custom__title">Man(ual) page for WebAssembly</p>
+            <ul class="breadcrumbs-custom__path">
+              <li><a href="index.html">Home</a></li>
+              <li>WebAssembly</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="bg-default section-lg">
+        <div class="container">
+          <div class="row row-60 justify-content-sm-center">
+            <div class="col-lg-8 section-divided__main">
+<!--
+
+              <section class="section-md post-single-body">
+                <div class="quote-default"> 
+                  <svg class="quote-default__mark" version="1.1" baseprofile="tiny" x="0px" y="0px" width="30.234px" height="23.484px" viewbox="0 0 30.234 23.484">
+                    <g>
+                      <path d="M12.129,0v1.723c-2.438,0.891-4.348,2.291-5.73,4.201c-1.383,1.911-2.074,3.897-2.074,5.959 c0,0.445,0.07,0.773,0.211,0.984c0.093,0.141,0.199,0.211,0.316,0.211c0.117,0,0.293-0.082,0.527-0.246 c0.75-0.539,1.699-0.809,2.848-0.809c1.336,0,2.519,0.545,3.551,1.635c1.031,1.09,1.547,2.385,1.547,3.885 c0,1.57-0.592,2.953-1.775,4.148c-1.184,1.195-2.619,1.793-4.307,1.793c-1.969,0-3.668-0.809-5.098-2.426 C0.715,19.441,0,17.274,0,14.555c0-3.164,0.972-6,2.918-8.508C4.863,3.539,7.933,1.524,12.129,0z M29.039,0v1.723 c-2.438,0.891-4.348,2.291-5.73,4.201c-1.383,1.911-2.074,3.897-2.074,5.959c0,0.445,0.07,0.773,0.211,0.984 c0.094,0.141,0.199,0.211,0.316,0.211s0.293-0.082,0.527-0.246c0.75-0.539,1.699-0.809,2.848-0.809c1.336,0,2.52,0.545,3.551,1.635 s1.547,2.385,1.547,3.885c0,1.57-0.592,2.953-1.775,4.148s-2.619,1.793-4.307,1.793c-1.969,0-3.668-0.809-5.098-2.426 s-2.145-3.785-2.145-6.504c0-3.164,0.973-6,2.918-8.508C21.773,3.539,24.844,1.524,29.039,0z"></path>
+                    </g>
+                  </svg>
+                  <div class="quote-default__text">
+                    <p class="q heading-4">Samples, references, tutorials and how-to on Blazor and WebAssembly.</p>
+                  </div>
+                  <p class="quote-default__cite">Man page for Blazor & WebAssembly</p>
+                </div>
+              </section>
+-->
+	                     <h4>WAT - WebAssembly Text Format</h4>
+<p>      
+WebAssembly has a binary format and a text format. The binary format (.wasm) is a compact binary instruction format for a stack-based virtual machine and is designed to be a portable compilation target for other higher-level languages such as C, C++, Rust, C#, Go, Python and many more.  The text format (.wat) is a human readable format designed to help developers view the source of an WebAssembly module. The text format can also be used for writing codes that can be compiled to the binary format.
+</p>
+<p>
+The code below shows an <a href="wat_multiply.wat">example of the .wat format</a> for multiplying two numbers.
+</p>
+
+    <div class="quote-bordered" style="text-align:left;background:black"> 
+      <pre><code style="color:white;">
+(module
+  (func $multiply (param $lhs i32) (param $rhs i32) (result i32)
+    get_local $lhs
+    get_local $rhs
+    i32.mul)
+  (export "multiply" (func $multiply))
+)
+            </code></pre>                  
+        </div>
+<p>
+The <a href="https://github.com/WebAssembly/wabt" rel="nofollow">WebAssembly Binary Toolkit</a> contains a wat2wasm tool that enables you to compile the text format to the binary format.
+</p>
+<p>
+<kbd>wat2wasm wat_multiply.wat</kbd>
+</p>
+<p>
+You will get the following .wasm binary format file as output.
+</p>
+<p>
+<strong>wat_multiply.wasm</strong>
+</p>
+
+
+<p>
+The source code of the Javascript that loads the .wasm file is illustrated below.
+Click to see the <a href=wat_multiply.html onclick='window.open("wat_multiply.html", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400"); return false;'>demo</a>.</p>
+
+    <div class="quote-bordered" style="text-align:left;background:black"> 
+      <pre><code style="color:white;">
+fetch('./wat_multiply.wasm').then(response =>
+  response.arrayBuffer()
+).then(bytes => WebAssembly.instantiate(bytes)
+).then(results => {
+  instance = results.instance;
+
+  console.log("Multiply Result is " +
+    instance.exports.multiply(2,5));
+
+}).catch(console.error);
+            </code></pre>                  
+        </div>
+        
+                
+
+
+             </div>
+      
+
+
+	    
+            <div class="col-lg-4 section-divided__aside section-divided__aside-left">
+
+              <section class="section-md">
+                <h5>WebAssembly</h5>
+                <ul class="list-linked">
+                    <li><a href="webcomponents.html">WebAssembly Web Components</a></li>
+                    <li><a href="wat_webassembly_text_format.html">WebAssembly Text Format</a></li>
+                  <li><a href="webassembly_wat_hello_world.html">WebAssembly WAT Hello World</a></li>
+                  <li><a href="webassembly_data_types.html">WebAssembly Data Types</a></li>
+                  <li><a href="webassembly_control_flow.html">WebAssembly Control Flow</a></li>
+                  <li><a href="webassembly_front_end_web_development.html">WebAssembly Front-End Development</a></li>
+                </ul>
+              </section>
+
+              <section class="section-md">
+                <h5>Blazor Topics</h5>
+                <ul class="list-linked">
+                  <li><a href="blazorhelloworld.html">Blazor Hello World</a></li>
+                  <li><a href="blazor/blazorcomponents.html">Blazor Components</a></li>
+                  <li><a href="blazor/blazoradmindashboard.html">Blazor Dashboard</a></li>
+                  <li><a href="blazor/blazorcharts.html">Blazor Charts</a></li>
+                  <li><a href="blazor/blazordonutchart.html">Blazor Donut Chart</a></li>          
+                  <li><a href="blazor/blazorpiechart.html">Blazor Pie Chart</a></li>
+                  <li><a href="blazor/blazorbarchart.html">Blazor Bar Chart</a></li>          
+                  <li><a href="blazor/blazorlinechart.html">Blazor Line Chart</a></li>          
+                  <li><a href="blazor/blazordatabinding.html">Blazor Data Binding</a></li>
+                  <li><a href="blazor/blazorevents.html">Blazor Events</a></li>
+                  <li><a href="blazor/blazorcascadingvaluesparameters.html">Blazor Cascading Values & Parameters</a></li>
+                  <li><a href="blazor/blazorbuildrendertree.html">Blazor BuildRenderTree</a></li>
+                  <li>Injection (coming soon)</li>
+                  <li>Layout (coming soon)</li>
+                </ul>
+              </section>
+
+              <section class="section-md">
+                <h5>Blazor Syntax</h5>
+                <ul class="list-linked">
+                  <li><a href="blazor/blazorforloop.html">for loop</a></li>
+                  <li><a href="blazor/blazorforeachloop.html">foreach loop</a></li>
+                  <li><a href="blazor/blazorwhiledowhileloop.html">while loop</a></li>
+                  <li><a href="blazor/blazorswitch.html">switch statement</a></li>
+                  <li><a href="blazor/blazorifelseif.html">if, else and else if statement</a></li>
+                </ul>
+              </section>
+              <section class="section-md">
+                <h5>Rust WebAssembly</h5>
+                <ul class="list-linked">
+                  <li><a href="rust_webassembly_hello_world.html">Rust WebAssembly Hello World</a></li>
+                  <li><a href="../rustwasm/frontendframeworksrustwebassembly.html">Front End Frameworks</a></li>
+                  <li><a href="../rustwasm/how_to_manipulate_the_dom_in_rust_webassembly.html">DOM manipulation</a></li> 
+                  <li><a href="../rustwasm/how_to_create_and_access_html_objects_in_rust_webassembly.html">HTML Objects</a></li> 
+                  <li><a href="../rustwasm/how_to_add_an_onclick_event_to_a_button_in_rust_webassembly.html">Button onclick</a></li> 
+                  <li><a href="../rustwasm/how_to_add_mouse_events_in_rust_webassembly.html">Mouse events</a></li>
+                  <li><a href="../rustwasm/how_to_add_keyboard_events_in_rust_webassembly.html">Keyboard events</a></li>      
+                  <li><a href="../rustwasm/how_to_log_to_the_console_in_rust_webassembly.html">Console log</a></li> 
+                  <li><a href="../rustwasm/how_to_add_svg_in_rust_webassembly.html">SVG in Rust WebAssembly</a></li> 
+                  <li><a href="../rustwasm/rustwasm_svg_donut_chart_webcomponent.html">SVG Donut Chart in Rust WebAssembly</a></li> 
+                </ul>
+              </section>
+
+              <section class="section-md">
+                <h5>rustwasm API</h5>
+                <ul class="list-linked">
+                  <li><a href="../rustwasm/wasm-bindgen.html">wasm-bindgen</a></li>
+                  <li><a href="../rustwasm/wasm_bindgen_jsvalue.html">wasm_bindgen::JsValue</a></li>    
+                  <li><a href="../rustwasm/web-sys.html">web-sys</a></li>
+                  <li><a href="../rustwasm/web_sys_console.html">web_sys::console</a></li>
+                  <li><a href="../rustwasm/web_sys_document.html">web_sys::Document</a></li>
+                  <li><a href="../rustwasm/web_sys_htmlcanvaselement.html">web_sys::HtmlCanvasElement</a></li>
+                  <li><a href="../rustwasm/web_sys_canvasrenderingcontext2d.html">web_sys::CanvasRenderingContext2d</a></li>
+                  <li><a href="../rustwasm/web_sys_fontface.html">web_sys::FontFace</a></li>      
+                  <li><a href="../rustwasm/web_sys_svgelement.html">web_sys::SvgElement</a></li>
+                  <li><a href="../rustwasm/js-sys.html">js-sys</a></li>
+                  <li><a href="../rustwasm/js_sys_array.html">js_sys::Array</a></li>
+                  <li><a href="../rustwasm/gloo_events_eventlistener.html">gloo_events::EventListener</a></li>
+                  <li><a href="../rustwasm/wasm-bindgen-futures.html">wasm-bindgen-futures</a></li>
+                  <li><a href="../rustwasm/wasm_bindgen_futures_jsfuture.html">wasm-bindgen-futures::JsFuture</a></li>
+            
+                </ul>
+              </section>
+
+            </div>
+
+
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider-->
+      <div class="container">
+        <div class="divider"></div>
+      </div>
+
+      <section class="pre-footer-corporate" style="display:none">
+        <div class="container">
+          <div class="row justify-content-sm-center justify-content-lg-start row-30 row-md-60">
+
+            <ul class="list-inline-xxs">
+              <li><a class="icon icon-xxs icon-primary fa fa-twitter" href="https://connectcode.twitter.com"></a></li>
+            </ul>
+
+            <div class="col-sm-10 col-md-6 col-lg-3 col-xl-3">
+            </div>
+            <div class="col-sm-10 col-md-6 col-lg-5 col-xl-3">
+            </div>
+            <div class="col-sm-10 col-md-6 col-lg-4 col-xl-3">
+              <ul class="list-xs">
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <footer class="footer-corporate">
+        <div class="container">
+          <div class="footer-corporate__inner">
+            <p class="rights">Copyright <span>https://www.webassemblyMan.com</span><span>&nbsp;</span>2018 - <span id="copyright-year"></span>.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
